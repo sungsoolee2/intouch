@@ -1,0 +1,261 @@
+html,
+body {
+  /* background-image: url(../images/chicagoneon.jpg);
+  background-color: black; */
+
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.frontContainer {
+  background-image: url(../images/lakemichigan.jpg);
+  background-size: 100% 100%;
+  min-width: 100%;
+  min-height: 100vh;
+  /* min-height: 100%; */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr auto 1fr 1fr auto;
+  grid-template-areas:
+    "a a a a a a "
+    "b c c c c d"
+    "b c c c c d "
+    "b c c c c d"
+    "e e e e e e";
+}
+.navBar {
+  height: 55%;
+  background: #d9dadf;
+  grid-area: a;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "opt opt logo brg brg";
+}
+.homeMenu {
+  margin-left: 10%;
+  margin-right: 20%;
+  grid-area: opt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeNav {
+  font-weight: bold;
+  text-align: center;
+  /* border: solid 1px whitesmoke; */
+  /* padding: 10px; */
+  font-family: "Rajdhani", sans-serif;
+  box-sizing: content-box;
+  width: 100%;
+  padding: 2px;
+  /* margin: 0% 2%; */
+}
+.homeNav:hover {
+  cursor: pointer;
+  background: whitesmoke;
+  /* border: solid 1px whitesmoke; */
+}
+.logoDiv {
+  margin: 5px;
+  background-image: url(../images/mainLogo.png);
+  background-size: 100% 100%;
+  grid-area: logo;
+  display: flex;
+  align-items: flex-end;
+  /* justify-content: center; */
+}
+.title {
+  font-size: 250%;
+  font-family: "Dancing Script", cursive;
+}
+/* .burgerDiv{
+    grid-area: brg;
+    display: flex;
+    justify-content: flex-end;
+} */
+.burgerDiv {
+  /* background: #898991; */
+  grid-area: brg;
+  /* display: flex;
+  justify-content: space-between; */
+  /* justify-content: flex-end; */
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "mark profile brgr"
+    "friends settings brgr";
+  padding-top: 5px;
+  padding-bottom: 4px;
+}
+#goto {
+  align-self: center;
+  grid-area: brgr;
+  margin: 20px;
+}
+#goto:hover {
+  cursor: pointer;
+  /* filter: brightness(200%); */
+  opacity: 0.4;
+}
+
+.navOpt {
+  color: black;
+  font-family: "Rajdhani", sans-serif;
+  justify-self: center;
+  align-self: center;
+  padding: 5px;
+  box-sizing: content-box;
+  width: 45%;
+  text-align: center;
+  border: 1px solid transparent;
+}
+.navOpt:hover {
+  /* must have smooth border transition */
+  cursor: pointer;
+  color: rgb(114, 114, 114);
+  border: solid 1px whitesmoke;
+}
+
+/* #mark{
+  grid-area: mark;
+} 
+#friends{
+  grid-area: friends;
+} 
+#profile{
+  grid-area: profile;
+}
+#settings{
+  grid-area: settings;
+} */
+.background {
+  height: 190px;
+}
+.sidenav {
+  font-family: "Rokkitt", serif;
+}
+#map {
+  height: 100%;
+  width: 100%;
+  justify-self: flex-end;
+  grid-area: c;
+  border: 8px solid rgba(110, 110, 114, 0.712);
+}
+/* .mapDiv{
+  grid-area: c;
+  border: 8px solid rgba(110, 110, 114, 0.712);
+} */
+.frontSettings {
+  height: 100%;
+  width: 90%;
+  background: #2c2c2cd3;
+  grid-area: d;
+  display: flex;
+  justify-self: flex-end;
+  align-self: center;
+  flex-direction: column;
+}
+.settingClose {
+  box-sizing: content-box;
+  width: 100%;
+  color: whitesmoke;
+}
+.setHead {
+  box-sizing: content-box;
+  width: 100%;
+  padding: 5px 0px 20px 0px;
+  font-weight: bolder;
+  color: rgb(107, 107, 107);
+  font-family: "Rokkitt", serif;
+}
+.setOpt {
+  box-sizing: content-box;
+  width: 100%;
+  color: whitesmoke;
+  font-family: "Rokkitt", serif;
+}
+.footer {
+  /* align-items: center;
+  display: flex; */
+  /* justify-items: center; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "scl copy time";
+  margin-top: 5%;
+  height: 40px;
+  grid-area: e;
+  background: #898991;
+  justify-content: center;
+  font-family: "Rajdhani", sans-serif;
+}
+.copyright {
+  /* margin-left: 5%; */
+  align-self: center;
+  justify-self: center;
+  grid-area: copy;
+}
+.time {
+  margin-right: 5%;
+  align-self: center;
+  justify-self: flex-end;
+  grid-area: time;
+  color: whitesmoke;
+  font-family: "Rajdhani", sans-serif;
+}
+.social {
+  margin-top: 1%;
+  margin-left: 5%;
+  grid-area: scl;
+  justify-self: flex-start;
+  align-self: center;
+}
+.sclbtn:hover {
+  /* filter: brightness(300%); */
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+/* bottom of container */
+.slideContact {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 
+  "greet greet greet close"
+  "fill fill fill info";
+  padding: 1% 3% 3% 3%;
+
+}
+
+.greetDiv {
+  align-self: flex-start;
+  grid-area: greet;
+}
+.fillup {
+  grid-area: fill;
+}
+.sendBtn{
+  background: whitesmoke;
+}
+.sendBtn:hover{
+  cursor: pointer;
+}
+.scontact {
+  grid-area: info;
+  /* margin-right: 5%; */
+  align-self: center;
+  justify-self: flex-end;
+}
+.ctcClose {
+  grid-area: close;
+  justify-self: end;
+  font-size: 75px;
+  color: black;
+}
+.ctcClose:hover{
+  opacity: 0.4;
+  cursor: pointer;
+}
