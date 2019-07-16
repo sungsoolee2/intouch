@@ -1,15 +1,16 @@
 require("dotenv").config();
+console.log(require("dotenv").config());
 var express = require("express");
 var exphbs = require("express-handlebars");
 // var http = require('http').createServer(app);
 // var io = require('socket.io')(http);
-var db = require("./models");
+// var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.urlencoded({ extended: True }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/static', express.static('public'));
 
@@ -28,7 +29,8 @@ app.use(
     client_id: process.env.OKTA_CLIENT_ID,
     client_secret: process.env.OKTA_CLIENT_SECRET,
     redirect_uri: `${process.env.HOST_URL}/authorization-code/callback`,
-    scope: 'openid profile'
+    scope: 'openid profile',
+    appBaseUrl: "http://localhost:3000"
   });
   
   app.use(oidc.router);
@@ -45,12 +47,13 @@ app.get('/logout', (req, res) => {
       req.logout();
       res.redirect(
         `${process.env.OKTA_ORG_URL}/oauth2/default/v1/logout?${params}`
-      );
+      );``
     } else {
       res.redirect('/');
     }
   });
 app.use('/', require('./routes/index'));
+
 
 // Handlebars
 app.engine(
