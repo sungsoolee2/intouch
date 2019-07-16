@@ -70,7 +70,7 @@ body {
 .title {
   font-size: 250%;
   font-family: "Dancing Script", cursive;
-  text-shadow: 4px 4px 6px rgb(93, 217, 255);
+  text-shadow: 4px 4px 8px rgb(132, 226, 255);
 }
 /* .burgerDiv{
     grid-area: brg;
@@ -223,7 +223,7 @@ body {
 .slideContact {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   grid-template-areas: 
   "greet greet greet close"
   "fill fill fill info";
@@ -237,6 +237,9 @@ body {
 }
 .fillup {
   grid-area: fill;
+}
+#box3{
+  height: 100px;
 }
 .sendBtn{
   background: whitesmoke;
