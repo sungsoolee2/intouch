@@ -2,6 +2,7 @@ require("dotenv").config();
 console.log(require("dotenv").config());
 var express = require("express");
 var exphbs = require("express-handlebars");
+var path = require("path")
 // var http = require('http').createServer(app);
 // var io = require('socket.io')(http);
 // var db = require("./models");
@@ -47,7 +48,7 @@ app.get('/logout', (req, res) => {
       req.logout();
       res.redirect(
         `${process.env.OKTA_ORG_URL}/oauth2/default/v1/logout?${params}`
-      );
+      );``
     } else {
       res.redirect('/');
     }
