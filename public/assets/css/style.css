@@ -55,6 +55,7 @@ body {
 .homeNav:hover {
   cursor: pointer;
   background: whitesmoke;
+  /* box-shadow: 0px 0px 5px rgb(19, 180, 255); */
   /* border: solid 1px whitesmoke; */
 }
 .logoDiv {
@@ -69,6 +70,7 @@ body {
 .title {
   font-size: 250%;
   font-family: "Dancing Script", cursive;
+  text-shadow: 4px 4px 8px rgb(132, 226, 255);
 }
 /* .burgerDiv{
     grid-area: brg;
@@ -78,8 +80,7 @@ body {
 .burgerDiv {
   /* background: #898991; */
   grid-area: brg;
-  /* display: flex;
-  justify-content: space-between; */
+  /* justify-content: space-between;  */
   /* justify-content: flex-end; */
   display: grid;
   grid-template-columns: 1fr 1fr auto;
@@ -222,7 +223,7 @@ body {
 .slideContact {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   grid-template-areas: 
   "greet greet greet close"
   "fill fill fill info";
@@ -236,6 +237,9 @@ body {
 }
 .fillup {
   grid-area: fill;
+}
+#box3{
+  height: 100px;
 }
 .sendBtn{
   background: whitesmoke;

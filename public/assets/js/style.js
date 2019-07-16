@@ -97,7 +97,7 @@ var map, infoWindow;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 13
+          zoom: 16
         });
 
            
@@ -111,20 +111,12 @@ var map, infoWindow;
               lng: position.coords.longitude
             };
 
-             // adding icon attributes
-            var features = [
-              {
-                position: pos,
-                type: 'family'
-              }
-            ];
 
             var marker = new google.maps.Marker({
               position: pos, 
               map: map,
               draggable: true,
               animation: google.maps.Animation.BOUNCE,
-              icon: URL('./markerheart.png')
             });       
 
             map.setCenter(pos);
