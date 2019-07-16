@@ -1,16 +1,16 @@
-<<<<<<< HEAD
 require("dotenv").config();
+console.log(require("dotenv").config());
 var express = require("express");
 var exphbs = require("express-handlebars");
 // var http = require('http').createServer(app);
 // var io = require('socket.io')(http);
-var db = require("./models");
+// var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(express.urlencoded({ extended: True }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/static', express.static('public'));
 
@@ -29,7 +29,8 @@ app.use(
     client_id: process.env.OKTA_CLIENT_ID,
     client_secret: process.env.OKTA_CLIENT_SECRET,
     redirect_uri: `${process.env.HOST_URL}/authorization-code/callback`,
-    scope: 'openid profile'
+    scope: 'openid profile',
+    appBaseUrl: "http://localhost:3000"
   });
   
   app.use(oidc.router);
@@ -52,6 +53,7 @@ app.get('/logout', (req, res) => {
     }
   });
 app.use('/', require('./routes/index'));
+
 
 // Handlebars
 app.engine(
@@ -96,25 +98,3 @@ db.sequelize.sync(syncOptions).then(function() {
 });
 
 module.exports = app;
-=======
-// Dependencies
-var express = require("express");
-var exphbs = require("express-handlebars");
-
-// Create an instance of the express app.
-var app = express();
-
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 3500;
-
-// Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
-  // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
-});
->>>>>>> a9c38e21735ddd47ae5eb0abe5fe5717812cd417
