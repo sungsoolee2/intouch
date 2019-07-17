@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="./assets/css/materialize.min.css" />
+    <link rel="stylesheet" href="./assets/css/materialize.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Dancing+Script|Rajdhani|Rokkitt&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/images/globe-icon.png"
+    />
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <title>Home</title>
+  </head>
+  <body>
+
+  <!-- Container start -->
+    <div class="frontContainer">
+
+      <!-- Navigation Bar -->
+      <div class="navBar">
+
+          <!-- Left-side Menu options -->
+          <div class="homeMenu">
+                <span id = "home" class="homeNav">Home</span>
+                <span id = "homeFAQ" class="homeNav">FAQ</span>
+                <span id = "homePartners" class="homeNav">Partners</span>
+                <span id = "homeContact" class="homeNav">Contact</span>
+          </div>
+        
+        <!-- Page Logo -->
+        <div class="logoDiv">
+          <span class="title">inTouch</span>
+        </div>
+
+        <!-- Right-side Menu options -->
+        <div class="burgerDiv">
+          
+    
+          <a class="navOpt map" 
+            ><i class="navBtn">Navigate</i></a
+          >
+          <a data-target="slide-out" class="sidenav-trigger navOpt" 
+            ><i class="navBtn profile">Profile</i></a
+          >
+          <a class="navOpt friends"
+            ><i class="navBtn" >Friends</i></a
+          >
+          
+          <a data-target="dropdown1" class="navOpt settings dropdown-trigger"
+            ><i class="navBtn" >Settings</i></a
+          ></li>
+          
+          <ul id="dropdown1" class="dropdown-content">
+              <li><a href="#!">one</a></li>
+              <li><a href="#!">two</a></li>
+              <li class="divider"></li>
+              <li><a href="#!">three</a></li>
+            </ul>
+          
+          <!-- Burger-menu button -->
+          <img src="./assets/images/burgerblue.png" id="goto" class="navBtn"
+          width="50px" height="50px" / data-state="still"
+          data-open="./assets/images/burgeropen.gif"
+          data-close="./assets/images/burgerclose.gif">
+        </div>
+      </div>
+      <!-- Navigation Bar End -->
+
+      <!-- Profile Side Nav -->
+      <ul id="slide-out" class="sidenav">
+        <li>
+          <div class="user-view">
+            <div class="background">
+              <img src="./assets/images/lensright1.png" height="100%" width="110%" />
+            </div>
+            <a href="#user"><img class="circle" src="./assets/images/catuser.jpg"/></a>
+            <a href="#name"><span class="white-text name">El Gato</span></a>
+            <a href="#email"
+              ><span class="white-text email">el_gato@gmail.com</span></a
+            >
+          </div>
+        </li>
+        <li><a class="subheader">Parent Profile</a></li>
+        <li><a class="waves-effect" href="#!">First Spot Link</a></li>
+        <li><a class="waves-effect" href="#!">Second Spot Link</a></li>
+        <li><a class="waves-effect" href="#!">Third Spot Link</a></li>
+        <li><div class="divider"></div></li>
+      </ul>
+
+      <!-- Pop-up Map -->
+      <div id="map"></div>
+
+      <!-- Pop-up page settings -->
+      <div class="frontSettings">
+            
+          </div>
+        
+        <!-- Page Footer -->
+        <div class="footer">
+            <form class="form-inline">
+                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                  aria-label="Search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </form>
+            <!-- <nav class="searchBar N/A transparent">
+                <div class="nav-wrapper">
+                  <form>
+                    <div class="input-field">
+                      <input id="search" type="search" required>
+                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                      <i class="material-icons">close</i>
+                    </div>
+                  </form>
+                </div>
+              </nav> -->
+                <div class="botfoot">
+                    <span class="copyright">© 2019 Copyright: inTouch.com</span>
+                    <div class="time"></div>
+                </div>
+                
+
+                <!-- Social Media buttons -->
+                <div class="social">
+                        <img
+                          class="sclbtn"
+                          id="git"
+                          src="./assets/images/giticon.png"
+                          width="30"
+                          height="30"
+                        />
+                        <img
+                          class="sclbtn"
+                          id="insta"
+                          src="./assets/images/instablack.png"
+                          width="30"
+                          height="30"
+                        />
+                        <img
+                          class="sclbtn"
+                          id="google"
+                          src="./assets/images/gmail.png"
+                          width="30"
+                          height=31"
+                        />
+                      </div>
+              </div>
+</div>
+<!-- Front-page Container End -->
+            <!-- popup contact page -->
+                <div class="slideContact">
+                    <a class="ctcClose">&times;</a>
+                    <div class="greetDiv">
+                      <h1 class="greeting">Let's keep <span class="intouch">inTouch!</span></h1>
+                    </div>
+                    <form class="fillup">
+                          <input class="box" id="custName" placeholder="Name here...." type="text"/>
+                          <input class="box" id="custEmail" placeholder="Email Address here...." type="text"/>
+                          <br />
+                          <label class="form">Message</label>
+                          <br />
+                          <textarea class="box" id="box3" placeholder="Type your message here..." onfocus="this.placeholder = ''"></textarea>
+                          <br />  
+                          <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
+                              <i class="material-icons right">send</i>
+                          </button>
+                          <span class="sent"></span>
+                          
+                      </form>
+                     
+                          <span id="ctc1" class="scontact" >
+                          <h5>inTouch.com</h5>
+                          Chicago, IL<br>
+                          (773)555-5555<br><br>
+                          inTouch@gmail.com
+                          </span>
+                     
+                  </div>
+
+<!-- Script Start -->
+    <!-- jQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
+    <!-- Materialize -->
+    <script type="text/javascript" src="./assets/js/materialize.js"></script>
+    <script type="text/javascript" src="./assets/js/materialize.min.js"></script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="./assets/js/style.js"></script>
+    <!-- googleMaps -->
+    <!-- <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56oqazg533M9ShGiBl0i-453uyqSfryA&callback=initMap"
+      type="text/javascript"
+    ></script> -->
+
+      <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56oqazg533M9ShGiBl0i-453uyqSfryA&callback=initMap">
+    </script>
+  </body>
+</html>
