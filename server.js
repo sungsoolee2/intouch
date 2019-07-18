@@ -1,7 +1,7 @@
 require("dotenv").config();
 console.log(require("dotenv").config());
 var express = require("express");
-var exphbs = require("express-handlebars");npm i -g express-generator@4.16.0
+var exphbs = require("express-handlebars");
 var path = require("path")
 // var http = require('http').createServer(app);
 // var io = require('socket.io')(http);
@@ -39,23 +39,21 @@ app.use(
 // Okta registration page
 app.use('/register', require('./routes/register'));
 
-Okta logout route
-app.get('/logout', oidc.forceLogoutAndRevoke(), (req, res) => {
-  // Nothing here will execute, after the redirects the user will end up wherever the `routes.logoutCallback.afterCallback` specifies (default `/`)
-});
-// app.get('/forces-logout', oidc.forceLogoutAndRevoke(), (req, res)) => 
-    // if (req.userContext) {
-    //   const idToken = req.userContext.tokens.id_token;
-    //   const to = encodeURI(process.env.HOST_URL);
-    //   const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
-    //   req.logout();
-    //   res.redirect(
-    //     `${process.env.OKTA_ORG_URL}/oauth2/default/v1/logout?${params}`
-    //   );``
-    // } else {
-    //   res.redirect('/');
-  //   }
-  // });
+//Okta logout route
+// Okta logout route
+app.get('/logout', (req, res) => {
+    if (req.userContext) {
+      const idToken = req.userContext.tokens.id_token;
+      const to = encodeURI(process.env.HOST_URL);
+      const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
+      req.logout();
+      res.redirect(
+        `${process.env.OKTA_ORG_URL}/oauth2/default/v1/logout?${params}`
+      );``
+    } else {
+      res.redirect('/');
+    }
+  });
 app.use('/', require('./routes/index'));
 
 
@@ -70,13 +68,13 @@ app.engine(
 app.set('views', path.join(__dirname, 'views'))
 app.set("view engine", "handlebars");
 
-app.get('/', function(req, res){
-    res.render("index");
-   });
+// app.get('/', function(req, res){
+//     res.render("index");
+//    });
    
-   io.on('connection', function(socket){
-    console.log('a user connected');
-   });
+//    io.on('connection', function(socket){
+//     console.log('a user connected');
+//    });
 
 // Routes
 require("./routes/apiRoutes")(app);
