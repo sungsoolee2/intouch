@@ -40,6 +40,7 @@ app.use(
 // Okta registration page
 app.use('/register', require('./routes/register'));
 
+//Okta logout route
 // Okta logout route
 app.get('/logout', (req, res) => {
     if (req.userContext) {
@@ -69,7 +70,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set("view engine", "handlebars");
 
 // app.get('/', function(req, res){
-//     res.sendFile(__dirname + '/index.html');
+//     res.render("index");
 //    });
    
 //    io.on('connection', function(socket){
