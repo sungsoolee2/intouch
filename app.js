@@ -61,7 +61,7 @@ app.use('/reset-password', resetPassword)
 //   req.logout()
 //   res.redirect('/')
 // })
-// app.post('/forces-logout', oidc.forceLogoutAndRevoke(), (req, res) => {
+// app.post('/logout', oidc.forceLogoutAndRevoke(), (req, res) => {
 //   // Nothing here will execute, after the redirects the user will end up wherever the `routes.logoutCallback.afterCallback` specifies (default `/`)
 // });
 // catch 404 and forward to error handler
