@@ -1,14 +1,4 @@
-<p>Welcome to {{title}}</p>
-<p>
-  To access your dashboard,
-  {{#if userinfo}}
-    <a href="/dashboard">click here</a>.
-  {{else}}
-    <a href="/dashboard">sign in</a>.
-  {{/if}}
-</p>
-
-<h1>{{userinfo.given_name}}'s Dashboard</h1>
+<h1>{{user.profile.firstName}}'s Dashboard</h1>
 
 <p>Profile info</p>
 <dl>
