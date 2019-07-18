@@ -41,7 +41,6 @@ app.use(
 app.use('/register', require('./routes/register'));
 
 //Okta logout route
-<<<<<<< Updated upstream
 // Okta logout route
 app.get('/logout', (req, res) => {
     if (req.userContext) {
@@ -57,25 +56,6 @@ app.get('/logout', (req, res) => {
     }
   });
 app.use('/', require('./routes/index'));
-=======
-// app.get('/logout', oidc.forceLogoutAndRevoke(), (req, res) => {
-  // Nothing here will execute, after the redirects the user will end up wherever the `routes.logoutCallback.afterCallback` specifies (default `/`)
-// });
-// app.get('/forces-logout', oidc.forceLogoutAndRevoke(), (req, res)) => 
-    // if (req.userContext) {
-    //   const idToken = req.userContext.tokens.id_token;
-    //   const to = encodeURI(process.env.HOST_URL);
-    //   const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
-    //   req.logout();
-    //   res.redirect(
-    //     `${process.env.OKTA_ORG_URL}/oauth2/default/v1/logout?${params}`
-    //   );``
-    // } else {
-    //   res.redirect('/');
-  //   }
-  // });
-// app.use('/', require('./routes/index'));
->>>>>>> Stashed changes
 
 
 // Handlebars
@@ -89,7 +69,6 @@ app.engine(
 app.set('views', path.join(__dirname, 'views'))
 app.set("view engine", "handlebars");
 
-<<<<<<< Updated upstream
 // app.get('/', function(req, res){
 //     res.render("index");
 //    });
@@ -98,8 +77,6 @@ app.set("view engine", "handlebars");
 //     console.log('a user connected');
 //    });
 
-=======
->>>>>>> Stashed changes
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
