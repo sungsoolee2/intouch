@@ -1,8 +1,12 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
-router.get('/', (req, res) => {
-  res.render('index');
-});
+/* GET home page. */
+router.get('/', function (req, res, next) {
+  res.render('index', {
+    title: 'Okta Authentication',
+    user: req.user,
+  })
+})
 
-module.exports = router;
+module.exports = router

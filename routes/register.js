@@ -1,69 +1,54 @@
-const okta = require('@okta/okta-sdk-nodejs');
-const express = require('express');
+const okta = require('@okta/okta-sdk-nodejs')
+const express = require('express')
 
-const router = express.Router();
+const router = express.Router()
 
 const client = new okta.Client({
   orgUrl: process.env.OKTA_ORG_URL,
-  token: process.env.OKTA_TOKEN
-});
+  token: process.env.REGISTRATION_TOKEN,
+})
 
-// Take the user to the homepage if they're already logged in
-router.use('/', (req, res, next) => {
-  if (req.userContext) {
-    return res.redirect('/');
+const title = 'Create an account'
+
+router.get('/', (req, res, next) => {
+  if (req.userinfo) {
+    return res.redirect('/')
   }
 
-  next();
-});
+  res.render('register', { title })
+})
 
-const fields = [
-  { name: 'firstName', label: 'First Name' },
-  { name: 'lastName', label: 'Last Name' },
-  { name: 'email', label: 'Email', type: 'email' },
-  { name: 'password', label: 'Password', type: 'password' }
-];
-
-router.get('/', (req, res) => {
-  res.render('register', { fields });
-});
-
-router.post('/', async (req, res) => {
-  const { body } = req;
-
+router.post('/', async (req, res, next) => {
   try {
     await client.createUser({
       profile: {
-        firstName: body.firstName,
-        lastName: body.lastName,
-        email: body.email,
-        login: body.email
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        login: req.body.email,
       },
       credentials: {
         password: {
-          value: body.password
-        }
-      }
-    });
+          value: req.body.password,
+        },
+      },
+    })
 
-    res.redirect('/');
+    res.redirect('/dashboard')
   } catch ({ errorCauses }) {
-    const errors = {};
+    const errors = errorCauses.reduce((summary, { errorSummary }) => {
+      if (/Password/.test(errorSummary)) {
+        return Object.assign({ password: errorSummary })
+      }
 
-    errorCauses.forEach(({ errorSummary }) => {
-      const [, field, error] = /^(.+?): (.+)$/.exec(errorSummary);
-      errors[field] = error;
-    });
+      const [ field, error ] = /^(.+?): (.+)$/.exec(errorSummary)
+      return Object.assign({ [field]: error }, summary)
+    }, {})
 
-    res.render('register', {
-      errors,
-      fields: fields.map(field => ({
-        ...field,
-        error: errors[field.name],
-        value: body[field.name]
-      }))
-    });
+    console.log(errors)
+
+    res.render('register', { title, errors, body: req.body })
   }
-});
+})
 
-module.exports = router;
+module.exports = router
