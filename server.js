@@ -5,7 +5,7 @@ var exphbs = require("express-handlebars");
 var path = require("path")
 // var http = require('http').createServer(app);
 // var io = require('socket.io')(http);
-// var db = require("./models");
+var db = require("./models/user");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
