@@ -13,7 +13,7 @@ var path = require("path")
   // route loads the register.hbs page,
   
   app.get("/register", function(req, res) {
-    res.render("register");
+    res.render("view", {title: "register", layout: "dashMain"});
   });
 
   // route loads the dashboard.hbs page,
