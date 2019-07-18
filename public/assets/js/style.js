@@ -23,6 +23,7 @@ $(document).ready(function(){
           $(".homeMenu").fadeIn();
       }
     });
+ 
 })
 
 // home Navigation
@@ -57,7 +58,7 @@ $("#goto").click(function(){
       $(this).attr("src", $(this).attr("data-open"));
       $(this).attr("data-state", "open");
       // $(this).css({ "filter": "brightness(200%)"});
-      $(".navBar").animate({ "height": "84%"});
+      $(".navBar").animate({ "height": "89%"});
       // $(".navBar").css({ "background": "#898991"});
       // $(".burgerDiv").animate({backgroundColor: "#ff0000" });
       // $(".mainLogo").animate({ "height": "140px", "width": "160px"});

@@ -72,11 +72,7 @@ body {
   font-family: "Dancing Script", cursive;
   text-shadow: 4px 4px 8px rgb(132, 226, 255);
 }
-/* .burgerDiv{
-    grid-area: brg;
-    display: flex;
-    justify-content: flex-end;
-} */
+
 .burgerDiv {
   /* background: #898991; */
   grid-area: brg;
@@ -120,18 +116,6 @@ body {
   border: solid 1px whitesmoke;
 }
 
-/* #mark{
-  grid-area: mark;
-} 
-#friends{
-  grid-area: friends;
-} 
-#profile{
-  grid-area: profile;
-}
-#settings{
-  grid-area: settings;
-} */
 .background {
   height: 190px;
 }
@@ -145,61 +129,46 @@ body {
   grid-area: c;
   border: 8px solid rgba(110, 110, 114, 0.712);
 }
-/* .mapDiv{
-  grid-area: c;
-  border: 8px solid rgba(110, 110, 114, 0.712);
-} */
-.frontSettings {
-  height: 100%;
-  width: 90%;
-  background: #2c2c2cd3;
-  grid-area: d;
-  display: flex;
-  justify-self: flex-end;
-  align-self: center;
-  flex-direction: column;
-}
-.settingClose {
-  box-sizing: content-box;
-  width: 100%;
-  color: whitesmoke;
-}
-.setHead {
-  box-sizing: content-box;
-  width: 100%;
-  padding: 5px 0px 20px 0px;
-  font-weight: bolder;
-  color: rgb(107, 107, 107);
-  font-family: "Rokkitt", serif;
-}
-.setOpt {
-  box-sizing: content-box;
-  width: 100%;
-  color: whitesmoke;
-  font-family: "Rokkitt", serif;
-}
+
 .footer {
   /* align-items: center;
   display: flex; */
   /* justify-items: center; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "scl copy time";
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "srch mid scl"
+  "bot bot bot";
   margin-top: 5%;
-  height: 40px;
+  height: auto;
   grid-area: e;
   background: #898991;
   justify-content: center;
   font-family: "Rajdhani", sans-serif;
 }
+.form-inline{
+  margin-left: 3%;
+  grid-area: srch;
+  border: none;
+}
 .copyright {
-  /* margin-left: 5%; */
+  color: rgb(179, 179, 179);
+  /* width: 100%; */
+
+  margin-left: 1%;
   align-self: center;
-  justify-self: center;
+  /* justify-self: center; */
+  /* text-align: center; */
   grid-area: copy;
 }
+.botfoot{
+  background: #4f4f57;
+  grid-area: bot;
+}
 .time {
-  margin-right: 5%;
+  float: right;
+  margin-right: 1%;
   align-self: center;
   justify-self: flex-end;
   grid-area: time;
@@ -208,9 +177,9 @@ body {
 }
 .social {
   margin-top: 1%;
-  margin-left: 5%;
+  margin-right: 3%;
   grid-area: scl;
-  justify-self: flex-start;
+  justify-self: flex-end;
   align-self: center;
 }
 .sclbtn:hover {
@@ -235,8 +204,13 @@ body {
   align-self: flex-start;
   grid-area: greet;
 }
+.intouch{
+  font-family: "Dancing Script", cursive;
+  margin-left: 1%;
+}
 .fillup {
   grid-area: fill;
+  font-family: "Rokkitt", serif;
 }
 #box3{
   height: 100px;
