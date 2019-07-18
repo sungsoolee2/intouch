@@ -5,7 +5,7 @@ var exphbs = require("express-handlebars");
 var path = require("path")
 // var http = require('http').createServer(app);
 // var io = require('socket.io')(http);
-// var db = require("./models");
+var db = require("./models/user.js");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -75,9 +75,11 @@ app.set("view engine", "handlebars");
 //     console.log('a user connected');
 //    });
 
+
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+
 
 var syncOptions = { force: false };
 
@@ -88,14 +90,20 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+// db.sequelize.sync(syncOptions).then(function() {
+//   app.listen(PORT, function() {
+//     console.log(
+//       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+//       PORT,
+//       PORT
+//     );
+//   });
+// });
+app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
-      PORT
-    );
-  });
+);
 });
 
 module.exports = app;

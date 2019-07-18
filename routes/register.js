@@ -21,7 +21,8 @@ const fields = [
   { name: 'firstName', label: 'First Name' },
   { name: 'lastName', label: 'Last Name' },
   { name: 'email', label: 'Email', type: 'email' },
-  { name: 'password', label: 'Password', type: 'password' }
+  { name: 'password', label: 'Password', type: 'password' },
+  
 ];
 
 router.get('/', (req, res) => {

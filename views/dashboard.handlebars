@@ -1,0 +1,19 @@
+<p>Welcome to {{title}}</p>
+<p>
+  To access your dashboard,
+  {{#if userinfo}}
+    <a href="/dashboard">click here</a>.
+  {{else}}
+    <a href="/dashboard">sign in</a>.
+  {{/if}}
+</p>
+
+<h1>{{userinfo.given_name}}'s Dashboard</h1>
+
+<p>Profile info</p>
+<dl>
+  {{#each descriptionList}}
+    <dt>{{this.term}}</dt>
+    <dd>{{this.details}}</dd>
+  {{/each}}
+</dl>
