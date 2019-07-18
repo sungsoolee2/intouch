@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-require('dotenv').config()
+require('dotenv').config();
 console.log('dotenv')
 const { app, oidc } = require('../app')
 const debug = require('debug')('node-authentication:server')
