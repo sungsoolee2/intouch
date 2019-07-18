@@ -1,5 +1,3 @@
-require("dotenv").config();
-console.log(require("dotenv").config());
 const createError = require('http-errors')
 const express = require('express')
 const path = require('path')
@@ -16,11 +14,8 @@ const profileRouter = require('./routes/profile')
 const registrationRouter = require('./routes/register')
 const resetPassword = require('./routes/reset-password')
 
-
 const db = require("./models/user.js");
 const app = express()
-
-var PORT = process.env.PORT || 3000;
 
 const oidc = new ExpressOIDC({
   issuer: `${process.env.OKTA_ORG_URL}/oauth2/default`,
@@ -44,7 +39,7 @@ app.set('view engine', 'handlebars')
 
 app.use(logger('dev'))
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -62,11 +57,13 @@ app.use('/dashboard', oidc.ensureAuthenticated(), dashboardRouter)
 app.use('/profile', oidc.ensureAuthenticated(), profileRouter)
 app.use('/register', registrationRouter)
 app.use('/reset-password', resetPassword)
-app.get('/logout', (req, res) => {
-  req.logout()
-  res.redirect('/')
-})
-
+// app.get('/logout', (req, res) => {
+//   req.logout()
+//   res.redirect('/')
+// })
+// app.post('/forces-logout', oidc.forceLogoutAndRevoke(), (req, res) => {
+//   // Nothing here will execute, after the redirects the user will end up wherever the `routes.logoutCallback.afterCallback` specifies (default `/`)
+// });
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404))
