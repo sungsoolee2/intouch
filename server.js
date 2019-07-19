@@ -15,6 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
+// app.use('/static', express.static('public'));
+
+
 // Okta auth middleware
 app.use(
     require('express-session')({
@@ -67,7 +70,6 @@ app.engine(
   })
 );
 
-app.set('views', path.join(__dirname, 'views'))
 app.set("view engine", "handlebars");
 
 // app.get('/', function(req, res){
@@ -91,14 +93,14 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
+// db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
       PORT
     );
-  });
+  // });
 });
 
 module.exports = app;

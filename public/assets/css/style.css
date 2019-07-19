@@ -70,7 +70,7 @@ body {
 .title {
   font-size: 250%;
   font-family: "Dancing Script", cursive;
-  text-shadow: 4px 4px 8px rgb(132, 226, 255);
+  text-shadow: 1px 1px 1px rgb(114, 187, 255);
 }
 
 .burgerDiv {
@@ -123,28 +123,73 @@ body {
   font-family: "Rokkitt", serif;
 }
 #map {
+  border-radius: 5px;
   height: 100%;
   width: 100%;
   justify-self: flex-end;
   grid-area: c;
   border: 8px solid rgba(110, 110, 114, 0.712);
 }
+.chatDiv{
+  margin-right: 5%;
+  border-radius: 5px;
+  background: #3a3a3dce;
+  /* border: solid black 1px; */
+  justify-self: flex-end;
+  width: 80%;
+  margin-left: 5%;
+  grid-area: d;
+}
+.chatName{
+  font-size: 100%;
+  color: whitesmoke;
+  padding: 5px;
+  font-family: "Rajdhani", sans-serif;
+}
+.scroll{
+  background: #a6a6b156;
+  display: flex;
+  overflow: scroll;
+}
+.famList{
+  display: flex;
+  flex-direction: row;
+}
+.userImg{
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+}
+.chatHist{
+  /* border: solid black 1px; */
+  height: 50%;
+  background: rgba(255, 255, 255, 0.849);
+}
+.sendDiv{
+  margin: 5px;
+}
+#chatMsg{
+  /* color: #4f4f57; */
+  font-family: "Rokkitt", serif;
+}
+/* #chatMsg{
+  background: rgba(255, 255, 255, 0.849);
+} */
 
 .footer {
-  /* align-items: center;
-  display: flex; */
+  align-items: center;
+  justify-content: space-between;
+  display: flex; 
   /* justify-items: center; */
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas: 
-  "srch mid scl"
-  "bot bot bot";
+  "chat mid srch"; */
   margin-top: 5%;
   height: auto;
   grid-area: e;
   background: #898991;
-  justify-content: center;
   font-family: "Rajdhani", sans-serif;
 }
 .form-inline{
@@ -153,6 +198,7 @@ body {
   border: none;
 }
 .copyright {
+  font-family: "Rajdhani", sans-serif;
   color: rgb(179, 179, 179);
   /* width: 100%; */
 
@@ -162,34 +208,20 @@ body {
   /* text-align: center; */
   grid-area: copy;
 }
-.botfoot{
-  background: #4f4f57;
-  grid-area: bot;
-}
-.time {
-  float: right;
-  margin-right: 1%;
-  align-self: center;
-  justify-self: flex-end;
-  grid-area: time;
-  color: whitesmoke;
-  font-family: "Rajdhani", sans-serif;
-}
-.social {
-  margin-top: 1%;
-  margin-right: 3%;
-  grid-area: scl;
-  justify-self: flex-end;
-  align-self: center;
-}
-.sclbtn:hover {
-  /* filter: brightness(300%); */
-  opacity: 0.4;
-  cursor: pointer;
-}
 
 /* bottom of container */
 .slideContact {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+  "ctc"
+  "cpy";
+  /* padding: 1% 3% 3% 3%; */
+
+}
+.contactWrap{
+  grid-area: ctc;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto;
@@ -197,9 +229,7 @@ body {
   "greet greet greet close"
   "fill fill fill info";
   padding: 1% 3% 3% 3%;
-
 }
-
 .greetDiv {
   align-self: flex-start;
   grid-area: greet;
@@ -234,6 +264,32 @@ body {
   color: black;
 }
 .ctcClose:hover{
+  opacity: 0.4;
+  cursor: pointer;
+}
+.botfoot{
+  background: #4f4f57;
+  grid-area: cpy;
+  display: flex;
+  justify-content: space-between;
+}
+.time {
+  float: right;
+  margin-right: 1%;
+  align-self: center;
+  justify-self: flex-end;
+  grid-area: time;
+  color: whitesmoke;
+  font-family: "Rajdhani", sans-serif;
+}
+.social {
+  padding: 5px;
+  grid-area: scl;
+  justify-self: flex-end;
+  align-self: center;
+}
+.sclbtn:hover {
+  /* filter: brightness(300%); */
   opacity: 0.4;
   cursor: pointer;
 }

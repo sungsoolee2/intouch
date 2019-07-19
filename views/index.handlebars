@@ -1,31 +1,131 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/styledash.css' />
-  </head>
-  <body>
-    <header>
-<p>Welcome to {{title}}</p>
-<p>
-  To access your dashboard,
-  {{#if userinfo}}
-    <a href="/dashboard">click here</a>.
-  {{else}}
-    <a href="/dashboard">sign in</a>.
-    </p>
-  </p>
-  <p>
-    If you don't have an account, you can
-    <a href="/register">register for free</a>.
-    <br>
-  </p>
-  <p>
-    If you have an account, but forgot your password,
-    <a href="/reset-password">click here</a> to
-    send a recovery link to your email address.
-  {{/if}}
-</p>
-</header>
-</body>
-</html>
+<!-- Container start -->
+    <div class="frontContainer">
+
+      <!-- Navigation Bar -->
+      <div class="navBar">
+
+          <!-- Left-side Menu options -->
+          <div class="homeMenu">
+                <span id = "home" class="homeNav">Home</span>
+                <span id = "homeFAQ" class="homeNav">FAQ</span>
+                <span id = "homePartners" class="homeNav">Partners</span>
+                <span id = "homeContact" class="homeNav">Contact</span>
+          </div>
+        
+        <!-- Page Logo -->
+        <div class="logoDiv">
+          <span class="title">inTouch</span>
+        </div>
+
+        <!-- Right-side Menu options -->
+        <div class="burgerDiv">
+    
+          <a href="#" data-target="slide-out" class="navOpt map" 
+            ><i class="material-icons navBtn" >Navigate</i></a
+          >
+          <a href="#" data-target="slide-out" class="sidenav-trigger navOpt" 
+            ><i class="material-icons navBtn profile">Profile</i></a
+          >
+          <a href="#" data-target="slide-out" class="navOpt friends"
+            ><i class="material-icons navBtn" >Friends</i></a
+          >
+          <a href="#" data-target="slide-out" class="navOpt settings"
+            ><i class="material-icons navBtn" >Settings</i></a
+          >
+          
+          <!-- Burger-menu button -->
+          <img src="../public/assets/images/icons/burgerblue.png" id="goto" class="navBtn"
+          width="50px" height="50px" / data-state="still"
+          data-open="../public/assets/images/burgeropen.gif"
+          data-close="../public/assets/images/burgerclose.gif">
+        </div>
+      </div>
+      <!-- Navigation Bar End -->
+
+      <!-- Profile Side Nav -->
+      <ul id="slide-out" class="sidenav">
+        <li>
+          <div class="user-view">
+            <div class="background">
+              <img src="../public/assets/images/lensright1.png" height="100%" width="110%" />
+            </div>
+            <a href="#user"><img class="circle" src="../public/assets/images/catuser.jpg"/></a>
+            <a href="#name"><span class="white-text name">El Gato</span></a>
+            <a href="#email"
+              ><span class="white-text email">el_gato@gmail.com</span></a
+            >
+          </div>
+        </li>
+        <li><a class="subheader">Most Recent Spots</a></li>
+        <li><a class="waves-effect" href="#!">First Spot Link</a></li>
+        <li><a class="waves-effect" href="#!">Second Spot Link</a></li>
+        <li><a class="waves-effect" href="#!">Third Spot Link</a></li>
+        <li><div class="divider"></div></li>
+      </ul>
+
+      <!-- Pop-up Map -->
+      <div id="map"></div>
+
+      <!-- Pop-up page settings -->
+      <div class="frontSettings">
+            
+          </div>
+        
+        <!-- Page Footer -->
+        <div class="footer">
+                <span class="copyright">© 2019 Copyright: inTouch.com</span>
+                <div class="time"></div>
+
+                <!-- Social Media buttons -->
+                <div class="social">
+                        <img
+                          class="sclbtn"
+                          id="git"
+                          src="../public/assets/images/giticon.png"
+                          width="30"
+                          height="30"
+                        />
+                        <img
+                          class="sclbtn"
+                          id="insta"
+                          src="../public/assets/images/instablack.png"
+                          width="30"
+                          height="30"
+                        />
+                        <img
+                          class="sclbtn"
+                          id="google"
+                          src="../public/assets/images/gmail.png"
+                          width="30"
+                          height=31"
+                        />
+                      </div>
+              </div>
+</div>
+<!-- Front-page Container End --
+   <!-- popup contact page -->
+                <div class="slideContact">
+                    <a class="ctcClose">&times;</a>
+                    <div class="greetDiv">
+                      <h1 class="greeting">Let's keep inTouch!</h1>
+                    </div>
+                    <form class="fillup">
+                          <input class="box" id="custName" placeholder="Name here...." type="text"/>
+                          <input class="box" id="custEmail" placeholder="Email Address here...." type="text"/>
+                          <br />
+                          <label class="form">Message</label>
+                          <br />
+                          <textarea class="box" id="box3" placeholder="Type your message here..." onfocus="this.placeholder = ''"></textarea>
+                          <br />
+                          <button class="sendBtn" id="frontSend">Submit</button>
+                          <span class="sent"></span>
+                      </form>
+                     
+                          <span id="ctc1" class="scontact" >
+                          <h5>inTouch.com</h5>
+                          Chicago, IL<br>
+                          (773)555-5555<br><br>
+                          inTouch@gmail.com
+                          </span>
+                     
+                  </div>

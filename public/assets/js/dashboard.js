@@ -1,8 +1,7 @@
 $(document).ready(function(){
-    // $("#imageDiv").hide();
+    $("#imageDiv").hide();
     $(".slideContact").hide();
     $('.datepicker').datepicker();
-    startSlideshow();
     displayImage();
   });
 
@@ -17,25 +16,32 @@ var count = 0;
 
 // This function will replace display whatever image it's given
 // in the 'src' attribute of the img tag.
+
+// function displayImage() {
+//   // for (var i = 0; i < 5; i++) {
+//   // };
+//   clearInterval()
+//   count = Math.floor(Math.random() * 7)
+//   $("#imageDiv").html("<img src=" + images[count] + " width='100%'" + " height='100%'>");
+  
+//   $("#imageDiv").fadeIn('slow');
+//   setTimeout(function(){$("#imageDiv").fadeOut('slow');}, 3000)
+//   console.log("count: " + count);
+
+// }
+
 function displayImage() {
-  $("#imageDiv").html("<img src=" + images[count] + " width='100%'" + " height='100%'>");
-  // $("#imageDiv").fadeIn();
-
-}
-
-function nextImage() {
-  count++;
-
-  setTimeout(displayImage, 1000);
-
-  // If the count is the same as the length of the image array, reset the count to 0.
-  if (count === images.length) {
-    count = 0;
+  var loopNumber = 0;
+  if (loopNumber < 999){
+      count = Math.floor(Math.random() * 7)
+      clearInterval()
+      $("#imageDiv").html("<img src=" + images[count] + " width='100%'" + " height='100%'>");
+      $("#imageDiv").fadeIn('slow');
+      setTimeout(function(){$("#imageDiv").fadeOut('slow');}, 3000)
+      loopNumber++
+      displayImage()
+      console.log(loopNumber)
+  } else {
+    displayImage()
   }
-  console.log(count)
 }
-
-function startSlideshow() {
-  showImage = setInterval(nextImage, 3000);
-}
-
