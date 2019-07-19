@@ -14,7 +14,6 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
-// app.use('/static', express.static('public'));
 
 // Okta auth middleware
 app.use(
@@ -41,21 +40,23 @@ app.use(
 app.use('/register', require('./routes/register'));
 
 //Okta logout route
-// Okta logout route
-app.get('/logout', (req, res) => {
-    if (req.userContext) {
-      const idToken = req.userContext.tokens.id_token;
-      const to = encodeURI(process.env.HOST_URL);
-      const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
-      req.logout();
-      res.redirect(
-        `${process.env.OKTA_ORG_URL}/oauth2/default/v1/logout?${params}`
-      );``
-    } else {
-      res.redirect('/');
-    }
-  });
-app.use('/', require('./routes/index'));
+// app.get('/logout', oidc.forceLogoutAndRevoke(), (req, res) => {
+  // Nothing here will execute, after the redirects the user will end up wherever the `routes.logoutCallback.afterCallback` specifies (default `/`)
+// });
+// app.get('/forces-logout', oidc.forceLogoutAndRevoke(), (req, res)) => 
+    // if (req.userContext) {
+    //   const idToken = req.userContext.tokens.id_token;
+    //   const to = encodeURI(process.env.HOST_URL);
+    //   const params = `id_token_hint=${idToken}&post_logout_redirect_uri=${to}`;
+    //   req.logout();
+    //   res.redirect(
+    //     `${process.env.OKTA_ORG_URL}/oauth2/default/v1/logout?${params}`
+    //   );``
+    // } else {
+    //   res.redirect('/');
+  //   }
+  // });
+// app.use('/', require('./routes/index'));
 
 
 // Handlebars
@@ -66,7 +67,6 @@ app.engine(
   })
 );
 
-app.set('views', path.join(__dirname, 'views'))
 app.set("view engine", "handlebars");
 
 // app.get('/', function(req, res){
