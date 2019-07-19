@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
+    <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="stylesocketio.css" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <title>SocketIO App</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>InTouch Chat</h1>
+    </header>
+
+    <section>
+      <div id="change_username">
+	<input id="username" type="text" />
+	<button id="send_username" type="button">Change username</button>
+      </div>
+    </section>
+
+    <section id="chatroom">
+      <section id="feedback"></section>
+    </section>
+
+    
+
+    <section id="input_zone"> 
+      <input id="message" class="vertical-align" type="text" />
+      <button id="send_message" class="vertical-align" type="button">Send</button>
+    </section>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+//make connection
+ var socket = io.connect('http://localhost:3030')
+console.log(socket);
+ //buttons and inputs
+ var message = $("#message")
+ var username = $("#username")
+ var send_message = $("#send_message")
+ var send_username = $("#send_username")
+ var chatroom = $("#chatroom")
+ 
+
+ //Emit message
+ send_message.click(function(){
+     console.log("sending message")
+     socket.emit('new_message', {message : message.val()})
+ })
+
+ //Listen on new_message
+ socket.on("new_message", (data) => {
+     feedback.html('');
+     message.val('');
+     chatroom.append("<p class='message'>" + data.username + ": " + data.message + "</p>")
+ })
+
+ //Emit a username
+ send_username.click(function(){
+     console.log("sending username")
+     socket.emit('change_username', {username : username.val()})
+ })
+
+ //Emit typing
+ message.bind("keypress", () => {
+     console.log("typing now")
+     socket.emit('typing')
+ })
+
+ //Listen on typing
+ socket.on('typing', (data) => {
+     console.log("someone is typing")
+     feedback.html("<p><i>" + data.username + " is typing a message..." + "</i></p>")
+ })
+</script>
+ </body>
+</html>

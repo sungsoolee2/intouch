@@ -45,4 +45,10 @@ app.get("/error", function(req, res) {
     res.render("error");
   }); 
 
+  // route loads socketio.hbs page,
+  
+app.get("/socketio", function(req, res) {
+  res.render("socketio");
+  console.log("Loaded SocketIO Route!!!");
+}); 
 };

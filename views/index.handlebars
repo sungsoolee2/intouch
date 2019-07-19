@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/styledash.css' />
+  </head>
+  <body>
+    <header>
 <p>Welcome to {{title}}</p>
 <p>
   To access your dashboard,
@@ -5,10 +13,12 @@
     <a href="/dashboard">click here</a>.
   {{else}}
     <a href="/dashboard">sign in</a>.
+    </p>
   </p>
   <p>
     If you don't have an account, you can
     <a href="/register">register for free</a>.
+    <br>
   </p>
   <p>
     If you have an account, but forgot your password,
@@ -16,3 +26,6 @@
     send a recovery link to your email address.
   {{/if}}
 </p>
+</header>
+</body>
+</html>
