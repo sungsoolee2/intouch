@@ -29,6 +29,7 @@ const server = http.createServer(app)
 
 oidc.on('ready', () => {
   server.listen(port)
+  console.log("Listening on PORT: "+port)
 })
 oidc.on('error', onError)
 server.on('error', onError)

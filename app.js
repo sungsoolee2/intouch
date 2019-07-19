@@ -6,16 +6,28 @@ const logger = require('morgan')
 const session = require('express-session')
 const { ExpressOIDC } = require('@okta/oidc-middleware')
 const exphbs = require("express-handlebars");
-
 const okta = require('./okta')
 const indexRouter = require('./routes/index')
 const dashboardRouter = require('./routes/dashboard')
 const profileRouter = require('./routes/profile')
 const registrationRouter = require('./routes/register')
 const resetPassword = require('./routes/reset-password')
+var app = require('express')();
+var http = require('http').Server(app);
 
+//Listen on port 3030 for socket io
+server = app.listen(3030);
+var http = require('http').Server(app);
+//socket io server setup
+// server =http.listen(3030, function(){
+// });
+const io = require("socket.io")(http);
+
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
+
+//data base 
 const db = require("./models/user.js");
-const app = express()
 
 const oidc = new ExpressOIDC({
   issuer: `${process.env.OKTA_ORG_URL}/oauth2/default`,
@@ -23,7 +35,7 @@ const oidc = new ExpressOIDC({
   client_secret: process.env.OKTA_CLIENT_SECRET,
   redirect_uri: `${process.env.HOST_URL}/authorization-code/callback`,
   scope: 'openid profile',
-  appBaseUrl: "http://localhost:3000"
+
 })
 
 app.use('/', require('./routes/index'));
@@ -33,6 +45,7 @@ app.engine(
     defaultLayout: "main"
   })
 );
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'handlebars')
@@ -41,8 +54,8 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
 
+app.use(express.static('public'));
 app.use(session({
   secret: process.env.APP_SECRET,
   resave: true,
@@ -57,14 +70,12 @@ app.use('/dashboard', oidc.ensureAuthenticated(), dashboardRouter)
 app.use('/profile', oidc.ensureAuthenticated(), profileRouter)
 app.use('/register', registrationRouter)
 app.use('/reset-password', resetPassword)
-// app.get('/logout', (req, res) => {
-//   req.logout()
-//   res.redirect('/')
-// })
-// app.post('/logout', oidc.forceLogoutAndRevoke(), (req, res) => {
-//   // Nothing here will execute, after the redirects the user will end up wherever the `routes.logoutCallback.afterCallback` specifies (default `/`)
-// });
-// catch 404 and forward to error handler
+app.get('/logout', (req, res) => {
+  req.logout()
+  res.redirect('/')
+})
+
+//catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404))
 })
@@ -80,5 +91,55 @@ app.use(function (err, req, res, next) {
   res.render('error')
 
 })
+
+// socketio server side listener
+
+io.on('connection', function (socket) {
+  console.log('a user connected on port 3030');
+  //default username
+  socket.username = "Anonymous"
+  //listen on change_username
+  socket.on('change_username', (data) => {
+    socket.username = data.username
+  })
+  //disconnect user
+  socket.on('disconnect', function () {
+    console.log('user disconnected');
+  });
+
+  //listen on new_message
+  socket.on('new_message', (data) => {
+    //broadcast the new message
+    io.sockets.emit('new_message', { message: data.message, username: socket.username });
+  })
+
+  //listen on typing
+  socket.on('typing', (data) => {
+    socket.broadcast.emit('typing', { username: socket.username })
+  })
+
+});
+
+
+//SQL Database
+var syncOptions = { force: false };
+
+// If running a test, set syncOptions.force to true
+// clearing the `testdb`
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
+
+// Sequwlize start syncing our models ------------------------------------/
+db.sequelize.sync(syncOptions).then(function() {
+  console.log("sequlize database connected!!")
+  // app.listen(PORT, function() {
+  //   console.log(
+  //     "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+  //     PORT,
+  //     PORT
+  //   );
+  // });
+});
 
 module.exports = { app, oidc }
