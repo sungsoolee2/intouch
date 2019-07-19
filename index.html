@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
+  
     <!-- Materialize -->
     <link rel="stylesheet" href="./assets/css/materialize.min.css" />
     <link rel="stylesheet" href="./assets/css/materialize.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <!-- jQuery -->
+     <script
+     type="text/javascript"
+     src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+   ></script>
 
     <!-- Fonts -->
     <link
@@ -28,6 +32,16 @@
 
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <!-- Emoji -->
+    <link rel="stylesheet" href="./assets/css/emojionearea.min.css">
+    <script type="text/javascript" src="./assets/js/emojionearea.min.js"></script>
+    <!-- <link rel="stylesheet" href=".assets/css/emojionearea.min.css">
+    <script type="text/javascript" src=".assets/js/emojionearea.min.js"></script> -->
+
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Home</title>
   </head>
@@ -93,7 +107,7 @@
             <div class="background">
               <img src="./assets/images/lensright1.png" height="100%" width="110%" />
             </div>
-            <a href="#user"><img class="circle" src="./assets/images/catuser.jpg"/></a>
+            <a href="#user"><img class="circle" src="./assets/images/userPics/catuser.jpg"/></a>
             <a href="#name"><span class="white-text name">El Gato</span></a>
             <a href="#email"
               ><span class="white-text email">el_gato@gmail.com</span></a
@@ -110,18 +124,55 @@
       <!-- Pop-up Map -->
       <div id="map"></div>
 
-      <!-- Pop-up page settings -->
-      <div class="frontSettings">
-            
+      <!-- Chat Div -->
+      <div class="chatDiv">
+        <span class="chatName">Family Chat</span>
+          <div class="famDiv">
+              <div class="scroll">
+                  <ul class="famList">
+                    <li class="member">
+                        <a href="#user"><img class="circle userImg" src="./assets/images/userPics/catuser.jpg"/></a>
+                    </li>
+                    <li class="member">
+                        <a href="#user"><img class="circle userImg" src="./assets/images/userPics/lioness.png"/></a>
+                    </li>
+                    <li class="member">
+                        <a href="#user"><img class="circle userImg" src="./assets/images/userPics/tiger.png"/></a>
+                    </li>
+                    <li class="member">
+                        <a href="#user"><img class="circle userImg" src="./assets/images/userPics/kitten.png"/></a>
+                    </li>
+                    <li class="member">
+                        <a href="#user"><img class="circle userImg" src="./assets/images/userPics/couchcat.png"/></a>
+                    </li>
+                    <li class="member">
+                        <a href="#user"><img class="circle userImg" src="./assets/images/userPics/lioncat.png"/></a>
+                    </li>
+                    <li class="member">
+                        <a href="#user"><img class="circle userImg" src="./assets/images/userPics/snugglecat.png"/></a>
+                    </li>
+                  </ul>
+                </div>
           </div>
+          <div class="chatHist">
+  
+          </div>
+          <div class="send">
+              <textarea id="chatMsg">
+                  </textarea>
+            </div>
+        </div>
+    
         
         <!-- Page Footer -->
         <div class="footer">
-            <form class="form-inline">
-                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                  aria-label="Search">
-                <i class="fas fa-search" aria-hidden="true"></i>
-              </form>
+            <div class="input-field">
+                <i class="material-icons prefix">search</i>
+                <input class="box" id="search" placeholder="Search here..." type="search"/>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Chat
+                <i class="chatBtn material-icons right">chat</i>
+              </button>
             <!-- <nav class="searchBar N/A transparent">
                 <div class="nav-wrapper">
                   <form>
@@ -133,14 +184,44 @@
                   </form>
                 </div>
               </nav> -->
-                <div class="botfoot">
-                    <span class="copyright">© 2019 Copyright: inTouch.com</span>
-                    <div class="time"></div>
-                </div>
+      </div>
+    
+      <!-- Footer End -->
                 
 
-                <!-- Social Media buttons -->
-                <div class="social">
+                
+</div>
+<!-- Front-page Container End -->
+            <!-- popup contact page -->
+                <div class="slideContact">
+                  <div class="contactWrap">
+                      <a class="ctcClose">&times;</a>
+                      <div class="greetDiv">
+                        <h1 class="greeting">Let's keep <span class="intouch">inTouch!</span></h1>
+                      </div>
+                      <form class="fillup">
+                            <input class="box" id="custName" placeholder="Name here...." type="text"/>
+                            <input class="box" id="custEmail" placeholder="Email Address here...." type="text"/>
+                            <br />
+                            <label class="form">Message</label>
+                            <br />
+                            <textarea class="box" id="box3" placeholder="Type your message here..." onfocus="this.placeholder = ''"></textarea>
+                            <br />  
+                            <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                            <span class="sent"></span>
+                            
+                        </form>
+                            <span id="ctc1" class="scontact" >
+                            <h5>inTouch.com</h5>
+                            Chicago, IL<br>
+                            (773)555-5555<br><br>
+                            inTouch@gmail.com
+                            </span>
+                  </div>
+                  <div class="botfoot">
+                    <div class="social">
                         <img
                           class="sclbtn"
                           id="git"
@@ -163,45 +244,17 @@
                           height=31"
                         />
                       </div>
-              </div>
-</div>
-<!-- Front-page Container End -->
-            <!-- popup contact page -->
-                <div class="slideContact">
-                    <a class="ctcClose">&times;</a>
-                    <div class="greetDiv">
-                      <h1 class="greeting">Let's keep <span class="intouch">inTouch!</span></h1>
-                    </div>
-                    <form class="fillup">
-                          <input class="box" id="custName" placeholder="Name here...." type="text"/>
-                          <input class="box" id="custEmail" placeholder="Email Address here...." type="text"/>
-                          <br />
-                          <label class="form">Message</label>
-                          <br />
-                          <textarea class="box" id="box3" placeholder="Type your message here..." onfocus="this.placeholder = ''"></textarea>
-                          <br />  
-                          <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
-                              <i class="material-icons right">send</i>
-                          </button>
-                          <span class="sent"></span>
-                          
-                      </form>
-                     
-                          <span id="ctc1" class="scontact" >
-                          <h5>inTouch.com</h5>
-                          Chicago, IL<br>
-                          (773)555-5555<br><br>
-                          inTouch@gmail.com
-                          </span>
-                     
+                      <span class="copyright">© 2019 Copyright: inTouch.com</span>
+                      <div class="time"></div>
+                      <!-- Social Media buttons -->
+                  
+            </div>
+                    
                   </div>
+                  
 
 <!-- Script Start -->
-    <!-- jQuery -->
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-    ></script>
+   
     <!-- Materialize -->
     <script type="text/javascript" src="./assets/js/materialize.js"></script>
     <script type="text/javascript" src="./assets/js/materialize.min.js"></script>

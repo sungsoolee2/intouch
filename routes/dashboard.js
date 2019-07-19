@@ -13,9 +13,10 @@ router.get('/', function (req, res, next) {
     .filter(({ details }) => details)
 
   res.render('dashboard', {
+    layout: dashMain,
     title: 'Dashboard',
     descriptionList,
-    user: req.user,
+    user: req.user
   })
 })
 

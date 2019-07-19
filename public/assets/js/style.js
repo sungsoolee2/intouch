@@ -8,13 +8,14 @@ $(document).ready(function(){
     $("#map").hide();
     $(".frontSettings").hide();
     $(".slideContact").hide();
+    $(".chatDiv").hide();
   //side Nav 
     $('.sidenav').sidenav();
     var elem = document.querySelector('.sidenav');
     var instance = M.Sidenav.init(elem, {
       onOpenStart: function () {
           console.log("I trigger as soon as the page is loaded");
-          $("#map").animate({ "width": "90%"}, 'fast');
+          $("#map").animate({ "width": "85%"}, 'fast'); 
           $(".homeMenu").fadeOut();
       },
       onCloseEnd: function () {
@@ -23,7 +24,12 @@ $(document).ready(function(){
           $(".homeMenu").fadeIn();
       }
     });
- 
+    // emoji Chat
+    $("#chatMsg").emojioneArea({
+
+    }
+    );
+
 })
 
 // home Navigation
@@ -149,6 +155,10 @@ var map, infoWindow;
       }
 
       // footer
+      // chatButton
+      $(".chatBtn").click(function(){
+        $(".chatDiv").slideToggle();
+      })
       // time
       var update = function() {
         $(".time").html(moment().format('MMMM Do YYYY, h:mm:ss a'));

@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
     return res.redirect('/')
   }
 
-  res.render('register', { title })
+  res.render('register', { title, layout: "dashMain" })
 })
 
 router.post('/', async (req, res, next) => {
@@ -47,7 +47,7 @@ router.post('/', async (req, res, next) => {
 
     console.log(errors)
 
-    res.render('register', { title, errors, body: req.body })
+    res.render('register', { title, errors, body: req.body, layout: "dashMain" })
   }
 })
 
