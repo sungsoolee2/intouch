@@ -22,6 +22,12 @@ var path = require("path")
     res.render("dashboard/index");
   });
 
+  // route loads the team.hbs page,
+  
+app.get("/team", function(req, res) {
+  res.render("team", {layout: "teamMain"});
+});
+
 // route loads the profile.hbs page,
   
 app.get("/profile", function(req, res) {
@@ -52,3 +58,4 @@ app.get("/socketio", function(req, res) {
   console.log("Loaded SocketIO Route!!!");
 }); 
 };
+

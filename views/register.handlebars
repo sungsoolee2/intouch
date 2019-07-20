@@ -1,7 +1,7 @@
 <!-- Container start -->
     <div class="frontContainer">
         <div id="imageDiv">
-        
+      
         </div>
         <div class="cardDiv">
                 <div class="logoDiv">
@@ -14,25 +14,30 @@
                 <img class="cardLogo" src="./assets/images/mainLogo.jpg">
                     </div> -->
                   <form class="formFillup">
-                      <div class="input-field">
+                      <div class="input-field fillName">
                               <i class="material-icons prefix">account_circle</i>
-                              <input class="box" id="custName" placeholder="Full Name" type="text"/>
+                              <input class="box" id="firstName" placeholder="First Name" type="text"/>
+                              <input class="box" id="lastName" placeholder="Last Name" type="text"/>
                           </div>
                       <div class="input-field">
                               <i class="material-icons prefix">mail</i>
-                              <input class="box" id="custName" placeholder="Email/Username" type="text"/>
+                              <input class="box" id="custEmail" placeholder="Email/Username" type="text"/>
                           </div>
                       <div class="input-field">
-                              <i class="material-icons prefix">local_phone</i>
-                              <input class="box" id="custName" placeholder="Group Name" type="text"/>
+                              <i class="material-icons prefix">group</i>
+                              <input class="box" id="custGroup" placeholder="Group Name" type="text"/>
                           </div>
-                      <div class="input-field">
+                        <div class="input-field">
+                            <i class="material-icons prefix">child_care</i>
+                            <input class="box" id="custChild" placeholder="Child Name" type="text"/>
+                        </div>
+                      <!-- <div class="input-field">
                               <i class="material-icons prefix">redeem</i>
                               <input class="box datepicker" id="custName" placeholder="Birthday" type="text"/>
-                          </div>
+                          </div> -->
                       <div class="input-field">
-                              <i class="material-icons prefix">lock</i>
-                              <input class="box" id="custName" placeholder="Password" type="password"/>
+                              <i class="material-icons prefix">fingerprint</i>
+                              <input class="box" id="custPass" placeholder="Password" type="password"/>
                           </div>
                       <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
                               
@@ -46,53 +51,76 @@
 
                   <div class="loginDiv">
                     <span class="cardMsg">Have an account? </span><a href="#">Log in</a>
+                    <br>
+                    <span id = "cardContact" class="homeNav">Contact Us</span>
                     </div>
+                    <!-- <div class="contactDiv">
                         
-                    
-                       
-                   
+                    </div> -->
         </div>
- <!-- datepicker materialize -->
-                   
-        <!-- Page Footer -->
-        <div class="footer">
-                <div class="botfoot">
-                    <span class="copyright">© 2019 Copyright: inTouch.com</span>
-                </div>
-            
-              <!-- Footer End -->
-</div>
+                      
+</div>  
 <!-- Front-page Container End -->
-            <!-- popup contact page -->
-                <div class="slideContact">
-                    <a class="ctcClose">&times;</a>
-                    <div class="greetDiv">
-                      <h1 class="greeting">Let's keep <span class="intouch">inTouch!</span></h1>
-                    </div>
-                    <form class="contactFillup">
-                          <input class="box" id="custName" placeholder="Name here...." type="text"/>
-                          <input class="box" id="custEmail" placeholder="Email Address here...." type="text"/>
-                          <br />
-                          <label class="form">Message</label>
-                          <br />
-                          <textarea class="box" id="box3" placeholder="Type your message here..." onfocus="this.placeholder = ''"></textarea>
-                          <br />  
-                          <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
-                              <i class="material-icons right">send</i>
-                          </button>
-                          <span class="sent"></span>
-                          
-                      </form>
-                     
-                          <span id="ctc1" class="scontact" >
-                          <h5>inTouch.com</h5>
-                          Chicago, IL<br>
-                          (773)555-5555<br><br>
-                          inTouch@gmail.com
-                          </span>
-                     
-                  </div>
-
+     <!-- popup contact page -->
+     <div class="slideContact">
+                       
+        <div class="contactWrap">
+            <a class="ctcClose">&times;</a>
+            <div class="greetDiv">
+              <h1 class="greeting">Let's keep <span class="intouch">inTouch!</span></h1>
+            </div>
+            <form class="fillup">
+                  <input class="box" id="custName" placeholder="Name here...." type="text"/>
+                  <input class="box" id="custEmail" placeholder="Email Address here...." type="text"/>
+                  <br />
+                  <label class="form">Message</label>
+                  <br />
+                  <textarea class="box" id="box3" placeholder="Type your message here..." onfocus="this.placeholder = ''"></textarea>
+                  <br />  
+                  <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
+                      <i class="material-icons right">send</i>
+                  </button>
+                  <span class="sent"></span>
+                  
+              </form>
+                  <span id="ctc1" class="scontact" >
+                  <h5>inTouch.com</h5>
+                  Chicago, IL<br>
+                  (773)555-5555<br><br>
+                  inTouch@gmail.com
+                  </span>
+        </div>
+        <div class="botfoot">
+          <div class="social">
+              <img
+                class="sclbtn"
+                id="git"
+                src="./assets/images/giticon.png"
+                width="30"
+                height="30"
+              />
+              <img
+                class="sclbtn"
+                id="insta"
+                src="./assets/images/instablack.png"
+                width="30"
+                height="30"
+              />
+              <img
+                class="sclbtn"
+                id="google"
+                src="./assets/images/gmail.png"
+                width="30"
+                height=31"
+              />
+            </div>
+            <span class="copyright">© 2019 Copyright: inTouch.com</span>
+           
+            <!-- Social Media buttons -->
+        
+  </div>
+          
+        </div>       
 
 
 
