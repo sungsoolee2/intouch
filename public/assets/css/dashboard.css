@@ -91,31 +91,8 @@ body {
   cursor: pointer;
   color: rgb(0, 183, 255);
 }
-.botfoot{
-  /* text-align: center; */
-  background: #4f4f57;
-  grid-area: bot;
-  display: flex;
-  justify-content: center;
-}
-
-
 /* bottom of container */
-.slideContact {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  grid-template-areas: 
-  "greet greet greet close"
-  "fill fill fill info";
-  padding: 1% 3% 3% 3%;
 
-}
-
-.greetDiv {
-  align-self: flex-start;
-  grid-area: greet;
-}
 .intouch{
   font-family: "Dancing Script", cursive;
   margin-left: 1%;
@@ -131,15 +108,49 @@ body {
 .fillName{
   display: flex;
 }
-.contactFillup {
-  margin: 5%;
-  /* padding: 5%; */
-  font-family: "Rokkitt", serif;
-}
+
 .termsDiv{
     padding-bottom: 2%;
     background: #ebebeb;
     text-align: center;
+}
+
+/* bottom of page */
+/* slide contact page */
+
+/* bottom of container */
+.slideContact {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "ctc"
+  "cpy";
+  /* padding: 1% 3% 3% 3%; */
+
+}
+
+.contactWrap{
+  grid-area: ctc;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+  "greet greet greet close"
+  "fill fill fill info";
+  padding: 1% 3% 3% 3%;
+}
+.greetDiv {
+  align-self: flex-start;
+  grid-area: greet;
+}
+.intouch{
+  font-family: "Dancing Script", cursive;
+  margin-left: 1%;
+}
+.fillup {
+  grid-area: fill;
+  font-family: "Rokkitt", serif;
 }
 #box3{
   height: 100px;
@@ -163,6 +174,30 @@ body {
   color: black;
 }
 .ctcClose:hover{
+  opacity: 0.4;
+  cursor: pointer;
+}
+.botfoot{
+  background: #4f4f57;
+  grid-area: cpy;
+  display: flex;
+  justify-content: space-between;
+}
+.time {
+  float: right;
+  margin-right: 1%;
+  align-self: center;
+  justify-self: flex-end;
+  grid-area: time;
+  color: whitesmoke;
+  font-family: "Rajdhani", sans-serif;
+}
+.social {
+  padding: 5px;
+  grid-area: scl;
+}
+.sclbtn:hover {
+  /* filter: brightness(300%); */
   opacity: 0.4;
   cursor: pointer;
 }

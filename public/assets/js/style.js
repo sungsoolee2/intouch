@@ -157,7 +157,7 @@ var map, infoWindow;
       // footer
       // chatButton
       $(".chatBtn").click(function(){
-        $(".chatDiv").slideToggle();
+        $(".chatDiv").toggle("up");
       })
       // time
       var update = function() {
