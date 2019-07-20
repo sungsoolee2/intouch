@@ -30,13 +30,13 @@
       <input id="message" class="vertical-align" type="text" />
       <button id="send_message" class="vertical-align" type="button">Send</button>
     </section>
-
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    
-    
     <script>
-// define var socketIO.
-  var socket = io.connect('http://localhost:3030')
+
+    //auto execute function to start socketio
+$(function(){
+    //make connection
+ var socket = io.connect('http://localhost:3500')
 
  //buttons and inputs
  var message = $("#message")
@@ -44,11 +44,10 @@
  var send_message = $("#send_message")
  var send_username = $("#send_username")
  var chatroom = $("#chatroom")
- 
+ var feedback = $("#feedback")
 
  //Emit message
- send_message.on(function(){
-     console.log("sending message")
+ send_message.click(function(){
      socket.emit('new_message', {message : message.val()})
  })
 
@@ -60,23 +59,25 @@
  })
 
  //Emit a username
- send_username.on(function(){
-     console.log("sending username")
+ send_username.click(function(){
      socket.emit('change_username', {username : username.val()})
  })
 
  //Emit typing
  message.bind("keypress", () => {
-     console.log("typing now")
+   console.log("Someone typing")
      socket.emit('typing')
  })
 
  //Listen on typing
  socket.on('typing', (data) => {
-     console.log("someone is typing")
+   console.log("Listing to typing")
      feedback.html("<p><i>" + data.username + " is typing a message..." + "</i></p>")
  })
- 
- </script>
+});
+</script>
+    
+    
+    
   </body>
 </html>
