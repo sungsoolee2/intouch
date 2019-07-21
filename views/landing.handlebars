@@ -1,17 +1,18 @@
- <head>
- <title>Get inTouch</title>
+ {{!-- <head>
+ <title>Dashboard</title>
  </head>
 
 <!-- Container start -->
     <div class="frontContainer">
+        
         <div id="imageDiv">
-          <img src="./assets/images/dashboard/5.jpg" height="100%" width="100%">
+          <img src="./assets/images/dashboard/2.jpg" height="100%" width="100%">
         </div>
         <div class="cardDiv">
                 <div class="logoDiv">
                     <span class="title">inTouch</span>
                     <br>
-                    <span class="cardMsg">Sign up and be inTouch with your Family</span>
+                    <span class="cardMsg">Welcome! Choose an option below</span>
                     </div>
                     
             <!-- <div class="logoDiv">
@@ -130,46 +131,24 @@
         
   </div>
           
-        </div>       
+        </div>        --}}
 
-
-
-{{!-- Sung's placeholder Code --}}
-
-{{!-- <h4>After creating your account, you will be asked to sign in and provide a security question.</h4>
-<form class="formFillup" method="post">
-  
-  <label for="firstname">
-    First Name
-    <input id="firstname" name="firstName" required value="{{body.firstName}}" />
-    <label class="error">{{errors.firstName}}</label>
-  </label>
-  <label for="lastname">
-    Last Name
-    <input id="lastname" name="lastName" required value="{{body.lastName}}" />
-    <label class="error">{{errors.lastName}}</label>
-  </label>
-  <label for="email">
-    Email address
-    <input type="email" id="email" name="email" required value="{{body.email}}" />
-    <label class="error">{{errors.email}}</label>
-    <label class="error">{{errors.login}}</label>
-  </label>
-  <label for="password">
-    Password
-    <input
-      name="password"
-      type="password"
-      required
-      value="{{body.password}}"
-    />
-    <label class="error">{{errors.password}}</label>
-    <label for="groupname">
-    Group Name
-    <input id="groupname" name="groupname" required value="{{body.groupname}}" />
-    <label class="error">{{errors.lastName}}</label>
-  </label>
-  </label>
-
-  <button type="submit">Register</button>
-</form> --}}
+<p>Welcome to {{title}}</p>
+<p>
+ To access your dashboard,
+ {{#if userinfo}}
+   <a href="/dashboard">click here</a>.
+ {{else}}
+   <a href="/dashboard">sign in</a>.
+ </p>
+ <p>
+   If you don't have an account, you can
+   <a href="/register">register for free</a>.
+ </p>
+ <p>
+   If you have an account, but forgot your password,
+   <a href="/reset-password">click here</a> to
+   send a recovery link to your email address.
+ {{/if}}
+</p>
+© 2019 GitHub, Inc.

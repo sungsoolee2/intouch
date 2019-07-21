@@ -19,13 +19,19 @@ var path = require("path")
   // route loads the dashboard.hbs page,
   
   app.get("/dashboard", function(req, res) {
-    res.render("dashboard/index");
+    res.render("dashboard/index", {layout: "dashMain"});
   });
 
   // route loads the team.hbs page,
   
 app.get("/team", function(req, res) {
   res.render("team", {layout: "teamMain"});
+});
+
+ // route loads the landing.hbs page,
+  
+ app.get("/landing", function(req, res) {
+  res.render("landing", {layout: "dashMain"});
 });
 
 // route loads the profile.hbs page,

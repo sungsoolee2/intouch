@@ -344,6 +344,9 @@ display: flex;
     font-family: "Rajdhani", sans-serif;
     color: whitesmoke;
 }
+#enlargeChat{
+  color: whitesmoke;
+}
 #send_message{
     margin-right: 5%;
     float: right;
