@@ -29,7 +29,9 @@ var io = require('socket.io').listen(server);
 require("./routes/htmlRoutes")(app);
 
 /************************************************ DB routes */
-require("./routes/childRoutes")
+require("./routes/parentRoutes.js")(app);
+
+require("./routes/childRoutes.js")(app);
 
 
 //data base 

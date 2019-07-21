@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
   if (req.userinfo) {
     return res.redirect('/')
   }
-  
+  console.log("Userinfo"+req.userinfo);
 
   res.render('register', { title, layout: "dashMain" })
   // return res.redirect('/register');
@@ -54,5 +54,20 @@ router.post('/', async (req, res, next) => {
     res.render('register', { title, errors, body: req.body, layout: "dashMain" })
   }
 })
+
+function handleRedirect(req, res, targetBaseUrl) {
+  const targetUrl = targetBaseUrl;
+  res.redirect(targetUrl);
+}
+
+// router.post('/register', function(req,res,next){
+//     if(req.body.Email == Email && req.body.password == password){
+//          res.redirect('/welcome'); // Redirect to /welcome if success
+//     }
+//     else {
+//          res.redirect('/login'); // Redirect to /login if login fail
+//     }
+
+// });
 
 module.exports = router
