@@ -109,6 +109,21 @@ $(".settingClose").click(function() {
   $(".frontSettings").slideToggle();
 });
 
+var rad = function(x) {
+return x * Math.PI / 180;
+};
+
+var getDistance = function(p1, p2) {
+  var R = 6378137; // Earth’s mean radius in meter
+  var dLat = rad(p2.lat - p1.lat);
+  var dLong = rad(p2.lng - p1.lng);
+  var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(rad(p1.lat)) * Math.cos(rad(p2.lat)) *
+    Math.sin(dLong / 2) * Math.sin(dLong / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c;
+  return d; // returns the distance in meter
+};
 
 // current location
 var map, infoWindow;
@@ -129,6 +144,7 @@ var map, infoWindow;
               lng: position.coords.longitude
             };
 
+            console.log(pos);
 
             var marker = new google.maps.Marker({
               position: pos, 
@@ -137,6 +153,7 @@ var map, infoWindow;
               animation: google.maps.Animation.BOUNCE,
             });       
 
+            
             map.setCenter(pos);
             marker.addListener('click', toggleBounce);
             function toggleBounce() {
@@ -146,6 +163,67 @@ var map, infoWindow;
                 marker.setAnimation(google.maps.Animation.DROP);
               }
             }
+            var reqRadius = 50; //10 miles for radius
+            var radiusInMeters = reqRadius * 1609.34;
+            var testRadius = 16944.08533718622;
+          var cityCircle = new google.maps.Circle({
+            strokeColor: '#428af5',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#428af5',
+            fillOpacity: 0.35,
+            map: map,
+            center: pos,
+            radius: testRadius
+          });
+
+            /*************** */
+                $.get("/api/parents/id/1", function(data) {
+                console.log(data);
+                var children = data.Children;
+                var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+
+                if(children){
+                console.log(children);
+                for(let i = 0; i < children.length; i++){
+                  console.log(children[i].location);
+                  /***************************** */
+                  var location = children[i].location.split(",");
+                  var lat = parseFloat(location[0]);
+                  var lng = parseFloat(location[1]);
+                var newpos = {
+              lat: lat,
+              lng: lng
+            }
+            console.log(newpos);
+            var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+                              var newmarker = new google.maps.Marker({
+              position: newpos, 
+              map: map,
+              draggable: true,
+              animation: google.maps.Animation.BOUNCE,
+              icon: image
+            });       
+
+            
+            newmarker.addListener('click', toggleBounce);
+            function toggleBounce() {
+              if (newmarker.getAnimation() !== null) {
+                newmarker.setAnimation(null);
+              } else {
+                newmarker.setAnimation(google.maps.Animation.DROP);
+              }
+            }
+
+
+/************** CODE TO CHECK CHILD IS IN THE LOCATION IF NOT SEND MAIL */
+// var distance = google.maps.geometry.spherical.computeDistanceBetween(new google.maps.LatLng(pos.lat, pos.lng), new google.maps.LatLng(newpos.lat, newpos.lng));
+// console.log(distance);
+console.log(Math.ceil(getDistance(pos,newpos)));
+                  /****************************** */
+                }
+                }
+    });
 
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -157,6 +235,8 @@ var map, infoWindow;
         }
         
       }
+
+
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
