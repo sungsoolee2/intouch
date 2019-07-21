@@ -37,6 +37,7 @@ router.post('/', async (req, res, next) => {
       },
     })
 
+  console.log(req.body);
     res.redirect('/dashboard')
   } catch ({ errorCauses }) {
     const errors = errorCauses.reduce((summary, { errorSummary }) => {
