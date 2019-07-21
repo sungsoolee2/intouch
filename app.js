@@ -16,6 +16,7 @@ const resetPassword = require('./routes/reset-password')
 var app = require('express')();
 var http = require('http').Server(app);
 var server = app.listen(3500);
+var PORT = process.env.PORT || 8080;
 //Listen on port 3030 for socket io
 // server = app.listen(3000);
 // var http = require('http').Server(app);
@@ -24,11 +25,15 @@ var server = app.listen(3500);
 // });
 // const io = require("socket.io")(http);
 var io = require('socket.io').listen(server);
-require("./routes/apiRoutes")(app);
+/**************** HTML ROUTES */
 require("./routes/htmlRoutes")(app);
 
+/************************************************ DB routes */
+require("./routes/childRoutes")
+
+
 //data base 
-const db = require("./models/user.js");
+const db = require("./models");
 
 const oidc = new ExpressOIDC({
   issuer: `${process.env.OKTA_ORG_URL}/oauth2/default`,
@@ -97,19 +102,19 @@ app.use(function (err, req, res, next) {
 // socketio server side listener
 
 io.on('connection', function (socket) {
-  console.log('socketio user connected on port 3500');
+  // console.log('socketio user connected on port 3500');
 
   //default username
   socket.username = "Anonymous"
   //listen on change_username
   socket.on('change_username', (data) => {
     socket.username = data.username
-    console.log("change username")
+    // console.log("change username")
     
   })
   //disconnect user
   socket.on('disconnect', function () {
-    console.log('user disconnected');
+    // console.log('user disconnected');
   })
 
   //listen on new_message
@@ -137,7 +142,10 @@ if (process.env.NODE_ENV === "test") {
 
 // Sequwlize start syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
-  console.log("sequlize database connected!!")
+    app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+  // console.log("sequlize database connected!!")
   // app.listen(PORT, function() {
   //   console.log(
   //     "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",

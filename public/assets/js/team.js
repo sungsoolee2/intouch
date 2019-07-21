@@ -9,12 +9,12 @@ $(document).ready(function() {
     var elem = document.querySelector(".sidenav");
     var instance = M.Sidenav.init(elem, {
       onOpenStart: function() {
-        console.log("I trigger as soon as the page is loaded");
+        // console.log("I trigger as soon as the page is loaded");
         $("#map").animate({ width: "85%" }, "fast");
         $(".homeMenu").fadeOut();
       },
       onCloseEnd: function() {
-        console.log("same");
+        // console.log("same");
         $("#map").animate({ width: "100%" }, "fast");
         $(".homeMenu").fadeIn();
       }

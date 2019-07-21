@@ -14,8 +14,11 @@ router.get('/', (req, res, next) => {
   if (req.userinfo) {
     return res.redirect('/')
   }
+  
 
   res.render('register', { title, layout: "dashMain" })
+  // return res.redirect('/register');
+  console.log("REGISTER PAGE");
 })
 
 router.post('/', async (req, res, next) => {

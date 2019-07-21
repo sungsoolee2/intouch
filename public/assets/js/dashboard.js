@@ -40,7 +40,7 @@ if (loopNumber < 999){
     setTimeout(function(){$("#imageDiv").fadeOut('slow');}, 3000)
     loopNumber++
     displayImage()
-    console.log(loopNumber)
+    // console.log(loopNumber)
 } else {
   displayImage()
 }
