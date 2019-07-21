@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
 
   res.render('dashboard', {
     layout: dashMain,
-    title: 'Dashboard',
+    title: 'dashboard',
     descriptionList,
     user: req.user
   })

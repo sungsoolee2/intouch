@@ -48,6 +48,16 @@ else{
 }
 });
 
+// homepage butotn
+$('#home').click(function() {
+  window.location = "http://localhost:3500"
+});
+
+// teampage button
+$('#homeTeam').click(function() {
+  window.location = "http://localhost:3000/team"
+});
+
 // slideContact close
 $(".ctcClose").click(function() {
   $(".slideContact").fadeOut();
@@ -160,6 +170,15 @@ var map, infoWindow;
       $(".chatBtn").click(function(){
         $(".chatBox").toggle("up");
       })
+
+      // enlargechat
+      $("#enlarge").click(function(){
+        $(".chatBox").toggle();
+        $("#map").hide();
+        $(".chatBox").css({ "grid-area": "c"});
+        $(".chatBox").toggle();
+      })
+
       // time
       var update = function() {
         $(".time").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
