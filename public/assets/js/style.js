@@ -8,7 +8,8 @@ $(document).ready(function(){
     $("#map").hide();
     $(".frontSettings").hide();
     $(".slideContact").hide();
-    $(".chatDiv").hide();
+    // $(".chatDiv").hide();
+    $(".chatBox").hide();
   //side Nav 
     $('.sidenav').sidenav();
     var elem = document.querySelector('.sidenav');
@@ -157,7 +158,7 @@ var map, infoWindow;
       // footer
       // chatButton
       $(".chatBtn").click(function(){
-        $(".chatDiv").toggle("up");
+        $(".chatBox").toggle("up");
       })
       // time
       var update = function() {

@@ -1,26 +1,360 @@
- 
-  * {
-      box-sizing: border-box;
+html,
+body {
+  /* background-image: url(../images/chicagoneon.jpg);
+  background-color: black; */
+
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.frontContainer {
+  background-image: url(../images/lakemichigan.jpg);
+  background-size: 100% 100%;
+  min-width: 100%;
+  min-height: 100vh;
+  /* min-height: 100%; */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr auto 1fr 1fr auto;
+  grid-template-areas:
+    "a a a a a a "
+    "b c c c c d"
+    "b c c c c d "
+    "b c c c c d"
+    "e e e e e e";
+}
+
+/* navbar start */
+.navBar {
+    height: 55%;
+    background: #d9dadf;
+    grid-area: a;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "opt opt logo brg brg";
+  }
+  .homeMenu {
+    margin-left: 10%;
+    margin-right: 20%;
+    grid-area: opt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .homeNav {
+    font-weight: bold;
+    text-align: center;
+    /* border: solid 1px whitesmoke; */
+    /* padding: 10px; */
+    font-family: "Rajdhani", sans-serif;
+    box-sizing: content-box;
+    width: 100%;
+    padding: 2px;
+    /* margin: 0% 2%; */
+  }
+  .homeNav:hover {
+    cursor: pointer;
+    background: whitesmoke;
+    /* box-shadow: 0px 0px 5px rgb(19, 180, 255); */
+    /* border: solid 1px whitesmoke; */
+  }
+  .logoDiv {
+    margin: 5px;
+    background-image: url(../images/mainLogo.png);
+    background-size: 100% 100%;
+    grid-area: logo;
+    display: flex;
+    align-items: flex-end;
+    /* justify-content: center; */
+  }
+  .title {
+    font-size: 250%;
+    font-family: "Dancing Script", cursive;
+    text-shadow: 1px 1px 1px rgb(124, 124, 124);
   }
   
-  html {
-      height: 100%;
+  .burgerDiv {
+    /* background: #898991; */
+    grid-area: brg;
+    /* justify-content: space-between;  */
+    /* justify-content: flex-end; */
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "mark profile brgr"
+      "friends settings brgr";
+    padding-top: 5px;
+    padding-bottom: 4px;
+  }
+  #goto {
+    align-self: center;
+    grid-area: brgr;
+    margin: 20px;
+  }
+  #goto:hover {
+    cursor: pointer;
+    /* filter: brightness(200%); */
+    opacity: 0.4;
   }
   
-  body {
-      margin: 0px;
-      height: 100%;
+  .navOpt {
+    color: black;
+    font-family: "Rajdhani", sans-serif;
+    justify-self: center;
+    align-self: center;
+    padding: 5px;
+    box-sizing: content-box;
+    width: 45%;
+    text-align: center;
+    border: 1px solid transparent;
+  }
+  .navOpt:hover {
+    /* must have smooth border transition */
+    cursor: pointer;
+    color: rgb(114, 114, 114);
+    border: solid 1px whitesmoke;
+  }
+  /* top navbar end */
+
+  /* sidenav */
+  .background {
+    height: 190px;
+  }
+  .sidenav {
+    font-family: "Rokkitt", serif;
+  }
+  #map {
+    margin-right: 2%;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    justify-self: flex-end;
+    grid-area: c;
+    border: 8px solid rgba(110, 110, 114, 0.712);
   }
   
-  header {
-      text-align: center;
+  /* footer */
+  .footer {
+    align-items: center;
+    justify-content: space-between;
+    display: flex; 
+    /* justify-items: center; */
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "chat mid srch"; */
+    margin-top: 5%;
+    height: auto;
+    grid-area: e;
+    background: #a6a6ad;
+    font-family: "Rajdhani", sans-serif;
+  }
+  .chatBtnDiv{
+    display: flex;
+  } 
+  .form-inline{
+    margin-left: 3%;
+    grid-area: srch;
+    border: none;
+  }
+  .searchDiv{
+    margin-left: 10px;
+  }
+  #search{
+    width: 100%;
+  }
+  /* footer end */
+
+  /* slidecontact */
+
+.copyright {
+    font-family: "Rajdhani", sans-serif;
+    color: rgb(179, 179, 179);
+    /* width: 100%; */
+  
+    margin-left: 1%;
+    align-self: center;
+    /* justify-self: center; */
+    /* text-align: center; */
+    grid-area: copy;
   }
   
-  h1 {
-      font-family: 'Comfortaa', sans-serif;
-      margin: 0px;
-  }
+  /* bottom of container */
+  .slideContact {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "prf"
+    "ctc"
+    "cpy";
+    /* padding: 1% 3% 3% 3%; */
   
+  }
+
+  .contactWrap{
+    grid-area: ctc;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "greet greet greet close"
+    "fill fill fill info";
+    padding: 1% 3% 3% 3%;
+  }
+  .greetDiv {
+    align-self: flex-start;
+    grid-area: greet;
+  }
+  .intouch{
+    font-family: "Dancing Script", cursive;
+    margin-left: 1%;
+  }
+  .fillup {
+    grid-area: fill;
+    font-family: "Rokkitt", serif;
+  }
+  #box3{
+    height: 100px;
+  }
+  .sendBtn{
+    background: whitesmoke;
+  }
+  .sendBtn:hover{
+    cursor: pointer;
+  }
+  .scontact {
+    grid-area: info;
+    /* margin-right: 5%; */
+    align-self: center;
+    justify-self: flex-end;
+  }
+  .ctcClose {
+    grid-area: close;
+    justify-self: end;
+    font-size: 75px;
+    color: black;
+  }
+  .ctcClose:hover{
+    opacity: 0.4;
+    cursor: pointer;
+  }
+  .botfoot{
+    background: #4f4f57;
+    grid-area: cpy;
+    display: flex;
+    justify-content: space-between;
+  }
+  .time {
+    float: right;
+    margin-right: 1%;
+    align-self: center;
+    justify-self: flex-end;
+    grid-area: time;
+    color: whitesmoke;
+    font-family: "Rajdhani", sans-serif;
+  }
+  .social {
+    padding: 5px;
+    grid-area: scl;
+    justify-self: flex-end;
+    align-self: center;
+  }
+  .sclbtn:hover {
+    /* filter: brightness(300%); */
+    opacity: 0.4;
+    cursor: pointer;
+  }
+
+.chatBox{
+    border: 4px solid rgba(110, 110, 114, 0.712);
+  grid-area: d;
+  margin-right: 5%;
+  border-radius: 5px;
+  background: #3a3a3dce;
+  /* border: solid black 1px; */
+  justify-self: flex-end;
+  width: 100%;
+  margin-left: 5%;
+}
+/* .chatName{
+    font-size: 100%;
+    color: whitesmoke;
+    padding: 5px;
+    font-family: "Rajdhani", sans-serif;
+  } */
+.usernameDiv{
+display: flex;
+/* flex-direction: row; */
+}
+#username{
+    /* padding: 5px; */
+    font-family: "Rajdhani", sans-serif;
+    color: whitesmoke;
+}
+#send_username{
+    margin-right: 5%;
+    float: right;
+    /* margin-left: 20%; */
+    font-family: "Rajdhani", sans-serif;
+    background: #4f4f57;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+.userImg{
+    /* padding: 5px; */
+    width: 40px;
+    height: 40px;
+  }
+  .scroll{
+    margin: 0;
+    background: #a6a6b156;
+
+    /* display: flex;
+    overflow: scroll; */
+  }
+  .famList{
+      
+      padding: 0px 5px 0px 5px;
+    /* padding: 5px; */
+    display: flex;
+    flex-direction: row;
+  }
+#chatroom{
+    background: #a6a6adb7;
+    font-family: "Rajdhani", sans-serif;
+    color: whitesmoke;
+    height: 180px;
+    overflow: scroll;
+}
+#roomTitle{
+    margin-top: 5%;
+    /* width: 100%; */
+    color: black;
+    background: #ffffff;
+}
+#feedback{
+    color: aquamarine;
+}
+#message{
+    font-family: "Rajdhani", sans-serif;
+    color: whitesmoke;
+}
+#send_message{
+    margin-right: 5%;
+    float: right;
+    /* margin-left: 20%; */
+    font-family: "Rajdhani", sans-serif;
+    background: #4f4f57;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+/* 
   div#change_username, section#input_zone {
       border: 5px outset #8258FA;
   }
@@ -85,3 +419,6 @@
   .message:nth-child(odd) {
       background-color: #81BEF7;
   }
+
+
+  */

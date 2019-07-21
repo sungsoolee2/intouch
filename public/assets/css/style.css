@@ -115,6 +115,7 @@ body {
   color: rgb(114, 114, 114);
   border: solid 1px whitesmoke;
 }
+/* top navbar end */
 
 .background {
   height: 190px;
@@ -130,11 +131,11 @@ body {
   grid-area: c;
   border: 8px solid rgba(110, 110, 114, 0.712);
 }
-.chatDiv{
+/* .chatDiv{
   margin-right: 5%;
   border-radius: 5px;
   background: #3a3a3dce;
-  /* border: solid black 1px; */
+  border: solid black 1px;
   justify-self: flex-end;
   width: 80%;
   margin-left: 5%;
@@ -148,23 +149,23 @@ body {
   color: whitesmoke;
   padding: 5px;
   font-family: "Rajdhani", sans-serif;
-}
-.scroll{
+} */
+/* .scroll{
   background: #a6a6b156;
   display: flex;
   overflow: scroll;
-}
-.famList{
+} */
+/* .famList{
   display: flex;
   flex-direction: row;
-}
-.userImg{
+} */
+/* .userImg{
   padding: 5px;
   width: 50px;
   height: 50px;
 }
 .chatHist{
-  /* border: solid black 1px; */
+  border: solid black 1px;
   height: 50%;
   background: rgba(255, 255, 255, 0.849);
 }
@@ -172,9 +173,9 @@ body {
   margin: 5px;
 }
 #chatMsg{
-  /* color: #4f4f57; */
+  color: #4f4f57;
   font-family: "Rokkitt", serif;
-}
+} */
 /* #chatMsg{
   background: rgba(255, 255, 255, 0.849);
 } */
@@ -206,9 +207,9 @@ body {
 #search{
   width: 100%;
 }
-.chatBtnDiv{
+/* .chatBtnDiv{
   display: flex;
-}
+} */
 .copyright {
   font-family: "Rajdhani", sans-serif;
   color: rgb(179, 179, 179);
