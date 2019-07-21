@@ -50,12 +50,12 @@ else{
 
 // homepage butotn
 $('#home').click(function() {
-  window.location = "http://localhost:3500"
+  window.location = "http://localhost:3500/socketio"
 });
 
 // teampage button
 $('#homeTeam').click(function() {
-  window.location = "http://localhost:3000/team"
+  window.location = "http://localhost:3500/team"
 });
 
 // slideContact close
