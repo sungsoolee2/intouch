@@ -23,6 +23,11 @@ $(document).ready(function() {
     // home Navigation
     $("#homeContact").click(function() {});
   });
+  // homepage butotn
+$('#home').click(function() {
+  window.location = "http://localhost:3500/socketio"
+});
+
   
   // burger menu
   $("#goto").click(function(){
