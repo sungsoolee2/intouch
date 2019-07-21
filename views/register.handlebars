@@ -13,19 +13,24 @@
             <!-- <div class="logoDiv">
                 <img class="cardLogo" src="./assets/images/mainLogo.jpg">
                     </div> -->
-                  <form class="formFillup">
+                  <form class="formFillup" method="post">
                       <div class="input-field fillName">
                               <i class="material-icons prefix">account_circle</i>
-                              <input class="box" id="firstName" placeholder="First Name" type="text"/>
-                              <input class="box" id="lastName" placeholder="Last Name" type="text"/>
+                              <input class="box" id="firstName" placeholder="First Name" type="text" required value="{{body.firstName}}"/>
+                              <label class="error">{{errors.firstName}}</label>
+                              <input class="box" id="lastName" placeholder="Last Name" type="text" required value="{{body.lastName}}"/>
+                              <label class="error">{{errors.lastName}}</label>
                           </div>
                       <div class="input-field">
                               <i class="material-icons prefix">mail</i>
-                              <input class="box" id="custEmail" placeholder="Email/Username" type="text"/>
+                              <input class="box" id="custEmail" placeholder="Email/Username" type="text" required value="{{body.email}}"/>
+                              <label class="error">{{errors.email}}</label>
+                              <label class="error">{{errors.login}}</label>
                           </div>
                       <div class="input-field">
                               <i class="material-icons prefix">group</i>
-                              <input class="box" id="custGroup" placeholder="Group Name" type="text"/>
+                              <input class="box" id="custGroup" placeholder="Group Name" type="text" required value="{{body.groupname}}"/>
+                              <label class="error">{{errors.lastName}}</label>
                           </div>
                         <div class="input-field">
                             <i class="material-icons prefix">child_care</i>
@@ -37,7 +42,8 @@
                           </div> -->
                       <div class="input-field">
                               <i class="material-icons prefix">fingerprint</i>
-                              <input class="box" id="custPass" placeholder="Password" type="password"/>
+                              <input class="box" id="custPass" placeholder="Password" type="password" required value="{{body.password}}"/>
+                              <label class="error">{{errors.password}}</label>
                           </div>
                       <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
                               
