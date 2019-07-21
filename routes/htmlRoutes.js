@@ -16,6 +16,12 @@ var path = require("path")
   //   res.render("register", {layout: dashMain});
   // });
 
+  // route loads the team.hbs page,
+  
+app.get("/oktadash", function(req, res) {
+  res.render("dashboard/oktadash", {layout: "dashMain"});
+});
+
   // route loads the dashboard.hbs page,
   
   app.get("/dashboard", function(req, res) {

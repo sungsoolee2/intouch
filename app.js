@@ -10,6 +10,7 @@ const okta = require('./okta')
 const indexRouter = require('./routes/index')
 const teamRouter = require('./routes/team')
 const dashboardRouter = require('./routes/dashboard')
+const oktaDashRouter = require('./routes/oktadash')
 const landingRouter = require('./routes/landing')
 const profileRouter = require('./routes/profile')
 const registrationRouter = require('./routes/register')
@@ -18,13 +19,7 @@ var app = require('express')();
 var http = require('http').Server(app);
 var server = app.listen(3500);
 var PORT = process.env.PORT || 8080;
-//Listen on port 3030 for socket io
-// server = app.listen(3000);
-// var http = require('http').Server(app);
-//socket io server setup
-// server =http.listen(3030, function(){
-// });
-// const io = require("socket.io")(http);
+
 var io = require('socket.io').listen(server);
 /**************** HTML ROUTES */
 require("./routes/htmlRoutes")(app);
@@ -78,6 +73,7 @@ app.use('/', indexRouter)
 app.use('/dashboard', oidc.ensureAuthenticated(), dashboardRouter)
 app.use('/profile', oidc.ensureAuthenticated(), profileRouter)
 app.use('/landing', landingRouter)
+app.use('/oktadash', oktaDashRouter)
 app.use('/team', teamRouter)
 app.use('/register', registrationRouter)
 app.use('/reset-password', resetPassword)
