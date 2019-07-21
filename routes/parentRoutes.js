@@ -66,6 +66,21 @@ module.exports = function(app) {
     });
   });
 
+    // Get route for retrieving a single post
+  app.get("/api/parents/email/:email", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Author
+    db.Parent.findOne({
+      where: {
+        email: req.params.email
+      },
+      include: [db.Child]
+    }).then(function(dbParent) {
+      res.json(dbParent);
+    });
+  });
+
   app.get("/api/parents/referral/:referral", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
