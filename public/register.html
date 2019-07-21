@@ -1,11 +1,7 @@
- <head>
- <title>Get inTouch</title>
- </head>
-
 <!-- Container start -->
     <div class="frontContainer">
         <div id="imageDiv">
-          <img src="./assets/images/dashboard/5.jpg" height="100%" width="100%">
+      
         </div>
         <div class="cardDiv">
                 <div class="logoDiv">
@@ -20,21 +16,21 @@
                   <form class="formFillup" method="post">
                       <div class="input-field fillName">
                               <i class="material-icons prefix">account_circle</i>
-                              <input class="box" id="firstName" placeholder="First Name" type="text" required value="{{body.firstName}}"/>
+                              <input class="box" id="firstName" placeholder="First Name" type="text"/>
                               
-                              <label class="error">{{errors.firstName}}</label>
-                              <input class="box" id="lastName" placeholder="Last Name" type="text" required value="{{body.lastName}}"/>
-                              <label class="error">{{errors.lastName}}</label>
+                              <!-- <label class="error">{{errors.firstName}}</label> -->
+                              <input class="box" id="lastName" placeholder="Last Name" type="text" />
+                              <!-- <label class="error">{{errors.lastName}}</label> -->
                           </div>
                       <div class="input-field">
                               <i class="material-icons prefix">mail</i>
-                              <input class="box" id="custEmail" placeholder="Email/Username" type="text" required value="{{body.email}}"/>
-                              <label class="error">{{errors.email}}</label>
-                              <label class="error">{{errors.login}}</label>
+                              <input class="box" id="custEmail" placeholder="Email/Username" type="text"/>
+                              <!-- <label class="error">{{errors.email}}</label>
+                              <label class="error">{{errors.login}}</label> -->
                           </div>
                       <div class="input-field">
                               <i class="material-icons prefix">group</i>
-                              <input class="box" id="custGroup" placeholder="Group Name" type="text" required value="{{body.groupname}}"/>
+                              <input class="box" id="custGroup" placeholder="Group Name" type="text"/>
                               <label class="error">{{errors.lastName}}</label>
                           </div>
                         <div class="input-field">
@@ -47,8 +43,8 @@
                           </div> -->
                       <div class="input-field">
                               <i class="material-icons prefix">fingerprint</i>
-                              <input class="box" id="custPass" placeholder="Password" type="password" required value="{{body.password}}"/>
-                              <label class="error">{{errors.password}}</label>
+                              <input class="box" id="custPass" placeholder="Password" type="password"/>
+                              <!-- <label class="error">{{errors.password}}</label> -->
                           </div>
                       <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
                               
@@ -134,43 +130,3 @@
         </div>       
 
 
-
-{{!-- Sung's placeholder Code --}}
-
-{{!-- <h4>After creating your account, you will be asked to sign in and provide a security question.</h4>
-<form class="formFillup" method="post">
-  
-  <label for="firstname">
-    First Name
-    <input id="firstname" name="firstName" required value="{{body.firstName}}" />
-    <label class="error">{{errors.firstName}}</label>
-  </label>
-  <label for="lastname">
-    Last Name
-    <input id="lastname" name="lastName" required value="{{body.lastName}}" />
-    <label class="error">{{errors.lastName}}</label>
-  </label>
-  <label for="email">
-    Email address
-    <input type="email" id="email" name="email" required value="{{body.email}}" />
-    <label class="error">{{errors.email}}</label>
-    <label class="error">{{errors.login}}</label>
-  </label>
-  <label for="password">
-    Password
-    <input
-      name="password"
-      type="password"
-      required
-      value="{{body.password}}"
-    />
-    <label class="error">{{errors.password}}</label>
-    <label for="groupname">
-    Group Name
-    <input id="groupname" name="groupname" required value="{{body.groupname}}" />
-    <label class="error">{{errors.lastName}}</label>
-  </label>
-  </label>
-
-  <button type="submit">Register</button>
-</form> --}}

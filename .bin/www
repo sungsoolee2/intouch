@@ -5,7 +5,7 @@
  */
 
 require('dotenv').config();
-console.log('dotenv')
+// console.log('dotenv')
 const { app, oidc } = require('../app')
 const debug = require('debug')('node-authentication:server')
 const http = require('http')
