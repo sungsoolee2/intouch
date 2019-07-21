@@ -169,7 +169,11 @@ var map, infoWindow;
       // chatButton
       $(".chatBtn").click(function(){
         $(".chatBox").toggle("up");
+        
       })
+      $('.openChatBtn').click(function() {
+        window.location = "http://localhost:3500/socketio"
+      });
 
       // enlargechat
       $("#enlarge").click(function(){

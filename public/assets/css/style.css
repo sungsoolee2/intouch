@@ -131,7 +131,7 @@ body {
   grid-area: c;
   border: 8px solid rgba(110, 110, 114, 0.712);
 }
-/* .chatDiv{
+.chatDiv{
   margin-right: 5%;
   border-radius: 5px;
   background: #3a3a3dce;
@@ -141,10 +141,10 @@ body {
   margin-left: 5%;
   grid-area: d;
 }
-#chatMsg{
+/* #chatMsg{
   height: 5px;
-}
-.chatName{
+} */
+/* .chatName{
   font-size: 100%;
   color: whitesmoke;
   padding: 5px;
