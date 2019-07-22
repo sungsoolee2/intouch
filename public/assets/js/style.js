@@ -101,7 +101,9 @@ $("#goto").click(function(){
 $(".map").click(function(){
   $("#map").toggle("slide");
 });
-
+$(".faqnavBtn").click(function(){
+  window.location = "http://localhost:3500/socketio"
+})
 // go to dashboard
 $('.dashboard').click(function() {
   window.location = "http://localhost:3500/dashboard"
