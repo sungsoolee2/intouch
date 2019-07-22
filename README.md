@@ -3,11 +3,15 @@ Created for project 2 at Northwestern Bootcamp Intouch is a real-time, interacti
 [Deployed Github Link :](LINK)
 [Heroku Link :](LINK)
 ## Screen Shots
-![Screen shot](LINK)
-Home Page
-![Screen shot2](LINK)
-Chat
-![Screen shot3](LINK)
+Register
+![Screen shot](./public/assets/images/readme/read3.png)
+Sign In
+![Screen shot2](./public/assets/images/readme/read5.png)
+Dashboard
+![Screen shot3](./public/assets/images/readme/read4.png)
+Homepage
+![Screen shot3](./public/assets/images/readme/read1.png)
+![Screen shot3](./public/assets/images/readme/read2.png)
 Google Maps
 ## Technologies used
 - [Node.js](https://en.wikipedia.org/wiki/Node.js)
@@ -16,7 +20,7 @@ Google Maps
 - [MySQL](https://en.wikipedia.org/wiki/MySQL)
 - [Express.js Framework](https://expressjs.com/)
 - [Handlebars](https://handlebarsjs.com/)
- [MVC -architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+- [MVC -architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
 - [NPM packages](https://www.npmjs.com/)
 - [OKTA authentication](https://www.okta.com/products/adaptive-multi-factor-authentication/)
 - [Socketio Library](https://socket.io/)
