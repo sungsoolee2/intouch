@@ -41,14 +41,74 @@ body {
   /* text-shadow: 4px 4px 8px rgb(132, 226, 255); */
 }
 .cardDiv{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
     /* background: #31b6ab; */
     grid-area: card;
+    margin-bottom: 10%;
 }
+
 .loginDiv {
-  padding: 1%;
+  padding: 5% 0% 5% 0%;
   margin-top: 2%;
   text-align: center;
   background: #ebebeb;
+}
+.extraCardMenu{
+  padding: 2%;
+  margin-top: 2%;
+  text-align: center;
+  background: #ebebeb;
+}
+
+.profileDiv{
+  padding: 5% 0% 5% 5%;
+  display: flex;
+  align-items: center;
+  border: #4f4f57 solid 1px;
+}
+#profileTitle{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+#myDash{
+  margin: 0;
+}
+.oktaDiv{
+  padding: 3%;
+  border: #4f4f57 1px solid;
+}
+.homeMenu {
+  /* margin-left: 10%;
+  margin-right: 20%; */
+  grid-area: opt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeNav {
+  margin-top: 1%;
+  font-weight: bold;
+  text-align: center;
+  /* border: solid 1px rgb(75, 74, 74); */
+  /* padding: 10px; */
+  font-family: "Rajdhani", sans-serif;
+  box-sizing: content-box;
+  width: 100%;
+  padding: 2px;
+  background: whitesmoke;
+  /* margin: 0% 2%; */
+}
+.homeNav:hover {
+  color: whitesmoke;
+  background: #656568;
+   /* border: solid 1px rgb(75, 74, 74); */
+  cursor: pointer;
+ 
+  /* box-shadow: 0px 0px 5px rgb(19, 180, 255); */
+  /* border: solid 1px whitesmoke; */
 }
 /* .cardLogo{
     height: 50%;

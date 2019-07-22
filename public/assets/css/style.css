@@ -117,6 +117,36 @@ body {
 }
 /* top navbar end */
 
+/* faqDiv */
+.faqDiv{
+  height: 80%;
+  border-radius: 5px;
+  border: 8px solid rgba(110, 110, 114, 0.712);
+  grid-area: c;
+  background: #37373aab;
+}
+.faqTitle{
+  margin-left: 17%;
+  padding: 5px;
+  font-family: "Rajdhani", sans-serif;
+  color: #d9dadf;
+  justify-self: center;
+}
+#faqSearch{
+  /* width: 80%; */
+  font-family: "Rokkitt", serif;
+}
+.faqSuggest{
+  background: #d9dadf;
+  /* color: #d9dadf; */
+  font-family: "Rokkitt", serif;
+  padding: 5px;
+}
+.faqfaq:hover{
+  cursor: pointer;
+  /* color: whitesmoke; */
+  opacity: 5;
+}
 .background {
   height: 190px;
 }
