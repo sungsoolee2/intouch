@@ -31,6 +31,24 @@ var count = 0;
 // }
 
 
+// go to dashboard
+$('.dashboard').click(function() {
+  window.location = "http://localhost:3500/dashboard"
+});
+// homepage butotn
+$('#home').click(function() {
+  window.location = "http://localhost:3500/socketio"
+});
+
+// teampage button
+$('#homeTeam').click(function() {
+  window.location = "http://localhost:3500/team"
+});
+
+// FAQpage butotn
+$('#homeFAQ').click(function() {
+  window.location = "http://localhost:3500/faq"
+});
 
 // $("#cardContact").click(function(){
 

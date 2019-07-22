@@ -1,45 +1,3 @@
-{{!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <header>
-      <h1>{{title}}</h1>
-      {{#if user}}
-        <a href="/profile">
-          Signed in as {{user.profile.firstName}} {{user.profile.lastName}}
-        </a>
-      {{/if}}
-      {{#if user}}
-        <a href="/logout">Sign out</a>
-      {{else}}
-        <a href="/login">Sign in</a>
-      {{/if}}
-      
-    </header>
-    <main>
-    <h2>{{user.profile.firstName}}'s Dashboard</h2>
-
-<p>Profile info</p>
-<dl>
-  {{#each descriptionList}}
-    <dt>{{this.term}}</dt>
-    <dd>{{this.details}}</dd>
-  {{/each}}
-</dl>
-      {{{body}}}
-    </main>
-  </body>
-</html> --}}
-
-
-
-
-
-
-
 <head>
   <title>Dashboard</title>
 </head>
@@ -59,43 +17,34 @@
     <!-- <div class="logoDiv">
                 <img class="cardLogo" src="./assets/images/mainLogo.jpg">
                     </div> -->
+
+
     <div class="formFillup">
-      <h1>{{title}}</h1>
-      {{#if user}}
-      <a href="/profile">
-        Signed in as {{user.profile.firstName}} {{user.profile.lastName}}
-      </a>
-      {{/if}}
-      {{#if user}}
-      <a href="/logout">Sign out</a>
-      {{else}}
-      <a href="/login">Sign in</a>
-      {{/if}}
-
-      </header>
-      <main>
-        <h2>{{user.profile.firstName}}'s Dashboard</h2>
-
-        <p>Profile info</p>
-        <dl>
-          {{#each descriptionList}}
-          <dt>{{this.term}}</dt>
-          <dd>{{this.details}}</dd>
-          {{/each}}
-        </dl>
-        {{{body}}}
-      </main>
-
+      <div class="profileDiv">
+        <a><img class="circle" src="./assets/images/userPics/catuser.jpg" height="100px" width="100px" /></a>
+        <div id="profileTitle">
+          <h3 id="myDash">My Dashboard</h3>
+          <span id="profileName">El Gato</span>
+          <span id="profileEmail">el_gato@gmail.com</span>
+          <span id="since">Member Since: July, 2019</span>
+        </div>
+      </div>
+      <div class="homeMenu">
+                <span id = "home" class="homeNav">Home</span>
+                <span id = "homeFAQ" class="homeNav">FAQ</span>
+                <span href="" id = "homeTeam" class="homeNav">Team</span>
+          </div>
     </div>
-    <div class="termsDiv">
+
+    {{!-- <div class="termsDiv">
       <span class="terms">By signing up, you agree to our Terms , Data Policy and Cookies Policy .</span>
 
-    </div>
+    </div> --}}
 
     <div class="loginDiv">
-      <span class="cardMsg">Have an account? </span><a href="#">Log in</a>
+      <span class="cardMsg">Not you? </span><a href="/login">Sign in as different user</a>
       <br>
-      <span id="cardContact" class="homeNav">Contact Us</span>
+      <span id="cardContact" >Contact Us</span>
     </div>
     <!-- <div class="contactDiv">
                         
@@ -148,3 +97,32 @@
 
 </div>
 
+
+     {{!-- custom okta form start --}}
+{{!-- {{#if user}}
+<a href="/profile">
+  Signed in as {{user.profile.firstName}} {{user.profile.lastName}}
+</a>
+{{/if}}
+{{#if user}}
+<a href="/logout">Sign out</a>
+{{else}}
+<a href="/login">Sign in as different user</a>
+{{/if}}
+
+</header>
+<main>
+  <h2>{{user.profile.firstName}}'s Dashboard</h2>
+
+  <p>Profile info</p>
+  <dl>
+    {{#each descriptionList}}
+    <dt>{{this.term}}</dt>
+    <dd>{{this.details}}</dd>
+    {{/each}}
+  </dl>
+  {{{body}}}
+
+
+</main> --}}
+  {{!-- custom okta form end --}}

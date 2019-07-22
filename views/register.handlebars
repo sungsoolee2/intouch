@@ -1,143 +1,144 @@
-{{!-- <head>
- <title>Get inTouch</title>
- </head>
+
+<head>
+  <title>Get inTouch</title>
+</head>
+
 
 <!-- Container start -->
-    <div class="frontContainer">
-        <div id="imageDiv">
-          <img src="./assets/images/dashboard/5.jpg" height="100%" width="100%">
-        </div>
-        <div class="cardDiv">
-                <div class="logoDiv">
-                    <span class="title">inTouch</span>
-                    <br>
-                    <span class="cardMsg">Sign up and be inTouch with your Family</span>
-                    </div>
-                    
-            <!-- <div class="logoDiv">
+<div class="frontContainer">
+  <div id="imageDiv">
+    <img src="./assets/images/dashboard/5.jpg" height="100%" width="100%">
+  </div>
+  <div class="cardDiv">
+    <div class="logoDiv">
+      <span class="title">inTouch</span>
+      <br>
+      <span class="cardMsg">Sign up and be inTouch with your Family</span>
+    </div>
+
+    <!-- <div class="logoDiv">
                 <img class="cardLogo" src="./assets/images/mainLogo.jpg">
                     </div> -->
-                  <form class="formFillup" method="post">
-                      <div class="input-field fillName">
-                              <i class="material-icons prefix">account_circle</i>
-                              <input class="box" id="firstName" placeholder="First Name" type="text" required value="{{body.firstName}}"/>
-                              
-                              <label class="error">{{errors.firstName}}</label>
-                              <input class="box" id="lastName" placeholder="Last Name" type="text" required value="{{body.lastName}}"/>
-                              <label class="error">{{errors.lastName}}</label>
-                          </div>
-                      <div class="input-field">
-                              <i class="material-icons prefix">mail</i>
-                              <input class="box" id="custEmail" placeholder="Email/Username" type="text" required value="{{body.email}}"/>
-                              <label class="error">{{errors.email}}</label>
-                              <label class="error">{{errors.login}}</label>
-                          </div>
-                      <div class="input-field">
-                              <i class="material-icons prefix">group</i>
-                              <input class="box" id="custGroup" placeholder="Group Name" type="text" required value="{{body.groupname}}"/>
-                              <label class="error">{{errors.lastName}}</label>
-                          </div>
-                        <div class="input-field">
-                            <i class="material-icons prefix">child_care</i>
-                            <input class="box" id="custChild" placeholder="Child Name" type="text"/>
-                        </div>
-                      <!-- <div class="input-field">
-                              <i class="material-icons prefix">redeem</i>
-                              <input class="box datepicker" id="custName" placeholder="Birthday" type="text"/>
-                          </div> -->
-                      <div class="input-field">
-                              <i class="material-icons prefix">fingerprint</i>
-                              <input class="box" id="custPass" placeholder="Password" type="password" required value="{{body.password}}"/>
-                              <label class="error">{{errors.password}}</label>
-                          </div>
-                      <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
-                              
-                          </button>
+    <form class="formFillup" method="post">
 
-                  </form>
-                  <div class="termsDiv">
-                    <span class="terms">By signing up, you agree to our Terms , Data Policy and Cookies Policy .</span>
-                    
-                    </div>
+        <label for="firstname">
+          <div class="input-field">
+            <i class="material-icons prefix">account_circle</i>
+            <input class="box nameBox" id="firstname" placeholder="First Name" name="firstName" required
+              value="{{body.firstName}}" />
+            <label class="error">{{errors.firstName}}</label>
+          </div>
+        </label>
+        <label for="lastname">
+          <div class="input-field">
+            <i class="material-icons prefix"></i>
+            <input class="box nameBox" id="lastname" placeholder="Last Name" name="lastName" required
+              value="{{body.lastName}}" />
+            <label class="error">{{errors.lastName}}</label>
+          </div>
+        </label>
 
-                  <div class="loginDiv">
-                    <span class="cardMsg">Have an account? </span><a href="#">Log in</a>
-                    <br>
-                    <span id = "cardContact" class="homeNav">Contact Us</span>
-                    </div>
-                    <!-- <div class="contactDiv">
+      <label for="email">
+        <div class="input-field">
+          <i class="material-icons prefix">mail</i>
+          <input class="box" type="email" id="email custEmail" placeholder="Email/Username" name="email" required
+            value="{{body.email}}" />
+          <label class="error">{{errors.email}}</label>
+          <label class="error">{{errors.login}}</label>
+        </div>
+      </label>
+      <label for="password">
+        <div class="input-field">
+          <i class="material-icons prefix">fingerprint</i>
+          <input class="box" name="password" placeholder="Password" type="password" required
+            value="{{body.password}}" />
+
+        </div>
+        <label for="groupname">
+          <div class="input-field">
+            <i class="material-icons prefix">group</i>
+            <input class="box" placeholder="Group Name" id="groupname" name="groupname" required
+              value="{{body.groupname}}" />
+            <label class="error">{{errors.lastName}}</label>
+          </div>
+
+
+        </label>
+
+        <label class="error">{{errors.password}}</label>
+      </label>
+
+      <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit">Register</button>
+
+    </form>
+   
+    <div class="termsDiv">
+      <span class="terms">By signing up, you agree to our Terms , Data Policy and Cookies Policy .</span>
+
+    </div>
+
+    <div class="extraCardMenu">
+      <span class="cardMsg">Have an account? </span><a href="#">Log in</a>
+      <br>
+      <span id="cardContact">Contact Us</span>
+    </div>
+    <!-- <div class="contactDiv">
                         
                     </div> -->
-        </div>
-                      
-</div>  
-<!-- Front-page Container End -->
-     <!-- popup contact page -->
-     <div class="slideContact">
-                       
-        <div class="contactWrap">
-            <a class="ctcClose">&times;</a>
-            <div class="greetDiv">
-              <h1 class="greeting">Let's keep <span class="intouch">inTouch!</span></h1>
-            </div>
-            <form class="fillup">
-                  <input class="box" id="custName" placeholder="Name here...." type="text"/>
-                  <input class="box" id="custEmail" placeholder="Email Address here...." type="text"/>
-                  <br />
-                  <label class="form">Message</label>
-                  <br />
-                  <textarea class="box" id="box3" placeholder="Type your message here..." onfocus="this.placeholder = ''"></textarea>
-                  <br />  
-                  <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
-                      <i class="material-icons right">send</i>
-                  </button>
-                  <span class="sent"></span>
-                  
-              </form>
-                  <span id="ctc1" class="scontact" >
-                  <h5>inTouch.com</h5>
-                  Chicago, IL<br>
-                  (773)555-5555<br><br>
-                  inTouch@gmail.com
-                  </span>
-        </div>
-        <div class="botfoot">
-          <div class="social">
-              <img
-                class="sclbtn"
-                id="git"
-                src="./assets/images/giticon.png"
-                width="30"
-                height="30"
-              />
-              <img
-                class="sclbtn"
-                id="insta"
-                src="./assets/images/instablack.png"
-                width="30"
-                height="30"
-              />
-              <img
-                class="sclbtn"
-                id="google"
-                src="./assets/images/gmail.png"
-                width="30"
-                height=31"
-              />
-            </div>
-            <span class="copyright">© 2019 Copyright: inTouch.com</span>
-           
-            <!-- Social Media buttons -->
-        
   </div>
-          
-        </div>        --}}
+
+</div>
+<!-- Front-page Container End -->
+<!-- popup contact page -->
+<div class="slideContact">
+
+  <div class="contactWrap">
+    <a class="ctcClose">&times;</a>
+    <div class="greetDiv">
+      <h1 class="greeting">Let's keep <span class="intouch">inTouch!</span></h1>
+    </div>
+
+    <form class="fillup">
+      <input class="box" id="custName" placeholder="Name here...." type="text" />
+      <input class="box" id="custEmail" placeholder="Email Address here...." type="text" />
+      <br />
+      <label class="form">Message</label>
+      <br />
+      <textarea class="box" id="box3" placeholder="Type your message here..."
+        onfocus="this.placeholder = ''"></textarea>
+      <br />
+      <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+      <span class="sent"></span>
+
+    </form>
+    <span id="ctc1" class="scontact">
+      <h5>inTouch.com</h5>
+      Chicago, IL<br>
+      (773)555-5555<br><br>
+      inTouch@gmail.com
+    </span>
+  </div>
+  <div class="botfoot">
+    <div class="social">
+      <img class="sclbtn" id="git" src="./assets/images/giticon.png" width="30" height="30" />
+      <img class="sclbtn" id="insta" src="./assets/images/instablack.png" width="30" height="30" />
+      <img class="sclbtn" id="google" src="./assets/images/gmail.png" width="30" height="31" />
+    </div>
+    <span class="copyright">© 2019 Copyright: inTouch.com</span>
+
+    <!-- Social Media buttons -->
+
+  </div>
+
+</div>
 
 
 
 {{!-- Sung's placeholder Code --}}
 
-<h4>After creating your account, you will be asked to sign in and provide a security question.</h4>
+{{!-- <h4>After creating your account, you will be asked to sign in and provide a security question.</h4>
 <form class="formFillup" method="post">
 
   <label for="firstname">
@@ -167,9 +168,10 @@
     </label>
   </label>
 
+
   <button type="submit" id="submit">Register</button>
 </form>
 
 {{!-- <script src="/assets/js/register-parse.js"> --}}
 
-</script>
+

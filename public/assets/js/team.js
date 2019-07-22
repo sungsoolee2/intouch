@@ -28,6 +28,10 @@ $('#home').click(function() {
   window.location = "http://localhost:3500/socketio"
 });
 
+// FAQpage butotn
+$('#homeFAQ').click(function() {
+  window.location = "http://localhost:3500/faq"
+});
   
   // burger menu
   $("#goto").click(function(){
@@ -52,6 +56,16 @@ $('#home').click(function() {
       // toggle options
       $(".navOpt").slideToggle();
   });
+
+  // go to dashboard
+$('.dashboard').click(function() {
+  window.location = "http://localhost:3500/dashboard"
+});
+
+// go to home page
+$('.map').click(function() {
+  window.location = "http://localhost:3500/socketio"
+});
   
   // Contact button (scroll to bottom of page)
   $("#homeContact").click(function() {
