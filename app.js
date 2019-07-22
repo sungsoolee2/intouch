@@ -15,6 +15,7 @@ const landingRouter = require('./routes/landing')
 const profileRouter = require('./routes/profile')
 const registrationRouter = require('./routes/register')
 const resetPassword = require('./routes/reset-password')
+const faqRouter = require('./routes/faq')
 var app = require('express')();
 var http = require('http').Server(app);
 var server = app.listen(3500);
@@ -75,6 +76,7 @@ app.use('/profile', oidc.ensureAuthenticated(), profileRouter)
 app.use('/landing', landingRouter)
 app.use('/oktadash', oktaDashRouter)
 app.use('/team', teamRouter)
+app.use('/faq', faqRouter)
 app.use('/register', registrationRouter)
 app.use('/reset-password', resetPassword)
 app.get('/logout', (req, res) => {

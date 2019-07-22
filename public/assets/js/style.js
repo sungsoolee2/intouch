@@ -58,6 +58,11 @@ $('#homeTeam').click(function() {
   window.location = "http://localhost:3500/team"
 });
 
+// FAQpage butotn
+$('#homeFAQ').click(function() {
+  window.location = "http://localhost:3500/faq"
+});
+
 // slideContact close
 $(".ctcClose").click(function() {
   $(".slideContact").fadeOut();
@@ -96,6 +101,12 @@ $("#goto").click(function(){
 $(".map").click(function(){
   $("#map").toggle("slide");
 });
+
+// go to dashboard
+$('.dashboard').click(function() {
+  window.location = "http://localhost:3500/dashboard"
+});
+
 // Profile
 // must toggle .homeMenu when user closes sideNav
 // $(".profile").click(function(){

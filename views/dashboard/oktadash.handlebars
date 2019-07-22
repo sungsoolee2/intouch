@@ -1,3 +1,110 @@
+<head>
+  <title>Authentication Page</title>
+</head>
+<!-- Container start -->
+<div class="frontContainer">
+
+  <div id="imageDiv">
+    <img src="./assets/images/dashboard/3.jpg" height="100%" width="100%">
+  </div>
+  <div class="cardDiv">
+    
+    <div class="logoDiv">
+      <span class="title">inTouch</span>
+      <br>
+      <span class="cardMsg">Welcome! Choose an option below</span>
+    </div>
+
+    <!-- <div class="logoDiv">
+                <img class="cardLogo" src="./assets/images/mainLogo.jpg">
+                    </div> -->
+
+
+    <div class="formFillup">
+      <div class="oktaDiv">
+<p>
+  To access your dashboard,
+  {{#if userinfo}}
+    <a href="/dashboard">click here</a>.
+  {{else}}
+    <a href="/dashboard">sign in</a>.
+  </p>
+  <p>
+    If you don't have an account, you can
+    <a href="/register">register for free</a>.
+  </p>
+  <p>
+    If you have an account, but forgot your password,
+    <a href="/reset-password">click here</a> to
+    send a recovery link to your email address.
+  {{/if}}
+</p>
+      </div>
+      
+      
+      <div class="homeMenu">
+                <span id = "homeFAQ" class="homeNav">FAQ</span>
+                <span href="" id = "homeTeam" class="homeNav">Team</span>
+                <span id="cardContact" class="homeNav" >Contact Us</span>
+          </div>
+    </div>
+
+
+  </div>
+
+</div>
+<!-- Front-page Container End -->
+<!-- popup contact page -->
+<div class="slideContact">
+
+  <div class="contactWrap">
+    <a class="ctcClose">&times;</a>
+    <div class="greetDiv">
+      <h1 class="greeting">Let's keep <span class="intouch">inTouch!</span></h1>
+    </div>
+    <form class="fillup">
+      <input class="box" id="custName" placeholder="Name here...." type="text" />
+      <input class="box" id="custEmail" placeholder="Email Address here...." type="text" />
+      <br />
+      <label class="form">Message</label>
+      <br />
+      <textarea class="box" id="box3" placeholder="Type your message here..."
+        onfocus="this.placeholder = ''"></textarea>
+      <br />
+      <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+      <span class="sent"></span>
+
+    </form>
+    <span id="ctc1" class="scontact">
+      <h5>inTouch.com</h5>
+      Chicago, IL<br>
+      (773)555-5555<br><br>
+      inTouch@gmail.com
+    </span>
+  </div>
+  <div class="botfoot">
+    <div class="social">
+      <img class="sclbtn" id="git" src="./assets/images/giticon.png" width="30" height="30" />
+      <img class="sclbtn" id="insta" src="./assets/images/instablack.png" width="30" height="30" />
+      <img class="sclbtn" id="google" src="./assets/images/gmail.png" width="30" height="31" />
+    </div>
+    <span class="copyright">© 2019 Copyright: inTouch.com</span>
+
+    <!-- Social Media buttons -->
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+{{!-- 
 <p>Welcome to {{title}}</p>
 <p>
   To access your dashboard,
@@ -17,3 +124,5 @@
   {{/if}}
 </p>
 © 2019 GitHub, Inc.
+ --}}
+
