@@ -19,7 +19,14 @@ const faqRouter = require('./routes/faq')
 var app = require('express')();
 var http = require('http').Server(app);
 var server = app.listen(3500);
-var PORT = process.env.PORT || 8080;
+
+var PORT;
+// if(process.env.JAWSDB_URL){
+//   connection = mysql.createConnection(process.env.JAWSDB_URL)
+// }
+// else{
+PORT = process.env.PORT || 8080;
+// }
 const nodemailer = require("nodemailer");
 
 var io = require('socket.io').listen(server);
