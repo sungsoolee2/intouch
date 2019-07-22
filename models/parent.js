@@ -21,7 +21,8 @@ module.exports = function(sequelize, DataTypes) {
     // passwordHash: DataTypes.STRING, //this needs to be a password hash, maybe we don't need to store passwords within our database but stored only one
     name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        // allowNull: false,
+        defaultValue: ''
         // validate: {
         //   len: [1]
         // }
@@ -38,7 +39,8 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         // unique: true
     },
-    age: DataTypes.INTEGER
+    radius: DataTypes.INTEGER
+    // age: DataTypes.INTEGER
 });
 
   Parent.associate = function(models) {
