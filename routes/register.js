@@ -35,9 +35,13 @@ router.post('/', async (req, res, next) => {
           value: req.body.password,
         },
       },
-    })
+    }).catch()
+    // }).then(function(){
+    //   console.log("loading up that promise boss");
+    //   console.log(req.body.childemail);
+    // })
 
-  console.log(req.body);
+  console.log("We made a user with "+req.body);
     res.redirect('/dashboard')
   } catch ({ errorCauses }) {
     const errors = errorCauses.reduce((summary, { errorSummary }) => {

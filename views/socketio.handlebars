@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <!-- Materialize js-->
     <script type="text/javascript" src="./assets/js/materialize.js"></script>
+
+    {{!-- CONNECTION TO NODEMAILER --}}
+    {{!-- <script src="/assets/js/mailer.js"></script> --}}
+    {{!-- ------------------------------------- --}}
+
 <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=geometry"></script>
 <!-- jQuery -->
      <script
@@ -68,7 +73,7 @@
           
     
           <a class="navOpt map" 
-            ><i class="navBtn">Navigate</i></a
+            ><i class="navBtn" id="map-btn">Navigate</i></a
           >
           <a data-target="slide-out" class="sidenav-trigger navOpt" 
             ><i class="navBtn profile">Profile</i></a
