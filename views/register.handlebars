@@ -39,7 +39,7 @@
       <label for="email">
         <div class="input-field">
           <i class="material-icons prefix">mail</i>
-          <input class="box" type="email" id="email custEmail" placeholder="Email/Username" name="email" required
+          <input class="box email" type="email" id="email custEmail" placeholder="Email/Username" name="email" required
             value="{{body.email}}" />
           <label class="error">{{errors.email}}</label>
           <label class="error">{{errors.login}}</label>
@@ -62,11 +62,21 @@
 
 
         </label>
+          <label for="childemail">
+          <div class="input-field">
+            {{!-- <i class="material-icons prefix">group</i> --}}
+            <input class="box" placeholder="Child Email" id="childemail" name="childemail" required
+              value="{{body.childemail}}" />
+            <label class="error">{{errors.lastName}}</label>
+          </div>
+
+
+        </label>
 
         <label class="error">{{errors.password}}</label>
       </label>
 
-      <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit">Register</button>
+      <button class="btn waves-effect waves-light #00b0ff light-blue accent-3" type="submit" id="submit-btn">Register</button>
 
     </form>
    
@@ -133,7 +143,7 @@
 </div>
 
 
-
+<script src="/assets/js/register-parse.js"></script>
 {{!-- Sung's placeholder Code --}}
 
 {{!-- <h4>After creating your account, you will be asked to sign in and provide a security question.</h4>

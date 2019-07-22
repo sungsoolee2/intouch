@@ -109,7 +109,7 @@ module.exports = function(app) {
 
   // POST route for saving a new post
   app.post("/api/parents", function(req, res) {
-    //console.log(req.body);
+    console.log(req.body);
     db.Parent.create(req.body).then(function(dbParent) {
       res.json(dbParent);
     });
