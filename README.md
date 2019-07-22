@@ -32,7 +32,7 @@ Google Maps
 - Go to localhost3000:/oktadash 
 - Register new user
 
-**Joey Langsangan** - /Materialize/HTML/CSS/Frontend Visual Design - [Joey](LINK)
+**Joey Lansangan** - /Materialize/HTML/CSS/Frontend Visual Design - [Joey](LINK)
 **Sung Lee** - /OKTA Authentication/SocketIO/NPM Packages - [Sung](LINK)
 **Kat Poulos** - /Sequelize MySQL/Google API/Nodemailer/Backend JS - [Kat](LINK)
 
