@@ -2,8 +2,17 @@
 // var nodemailer = require('../lib/nodemailer');
 // window.onload = function(){
 // var nodemailer = require('nodemailer');
+/**
+ * Think about using Twilio
+ * Gather location of current user / retrieve children's data parsed from user
+ * okta user auth === query into our db
+ */
 
-
+/**
+ * 
+ * @param {Object} p1 parent's position in lat, lng
+ * @param {Object} p2 child's position in lat, lng
+ */
 var getDistance = function(p1, p2) {
   var R = 6378137; // Earth’s mean radius in meter
   var dLat = rad(p2.lat - p1.lat);
@@ -26,6 +35,8 @@ $(function() {
       $("#map-btn").on("click", function(e) {
         console.log("please");
         //    main().catch(console.error);
+
+        ///think about server upticks
         distanceChecker();
       });
     });
