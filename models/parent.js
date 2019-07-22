@@ -38,8 +38,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         // unique: true
     },
-    age: DataTypes.INTEGER,
-    radius: DataTypes.INTEGER //acceptable radius for child
+    age: DataTypes.INTEGER
 });
 
   Parent.associate = function(models) {
