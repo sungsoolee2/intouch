@@ -43,10 +43,15 @@ Google Maps
 - Register new user
 
 ## Project 3- Accolades By Classroom Vote Awarded
+
 Winner Most Awe Inspiring 60%  - First Place Prize
+
 Winner Most Useful 65%
+
 Winner Most Creative 45%
+
 Winner Best Use of Tech 55%
+
 Winner Best UI/UX 65%
 
 ## Programming Team
