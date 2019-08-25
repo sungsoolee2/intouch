@@ -53,7 +53,7 @@ Winner Best UI/UX 65%
 
 ## Programming Team
 
-**Joey Lansangan** - /Materialize/HTML/CSS/Frontend Visual Design - [Joey Porfolio](https://joeylansangan.github.io/streetcode/)
+**Joey Lansangan** - /Materialize/HTML/CSS/Frontend Visual Design - [Joey Portfolio](https://joeylansangan.github.io/streetcode/)
 
 **Sung Lee** - /OKTA Authentication/SocketIO/NPM Packages - [Sung Portfolio](https://sungsoolee2.github.io/developer-portfolio/)
 
