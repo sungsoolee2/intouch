@@ -57,5 +57,5 @@ Winner Best UI/UX 65%
 
 **Sung Lee** - /OKTA Authentication/SocketIO/NPM Packages - [Sung Portfolio](https://sungsoolee2.github.io/developer-portfolio/)
 
-**Kat Poulos** - /Sequelize MySQL/Google API/Nodemailer/Backend JS - [Kat Portfolio](LINK)
+**Kat Poulos** - /Sequelize MySQL/Google API/Nodemailer/Backend JS - [Kat Portfolio](https://www.linkedin.com/in/katerina-poulos-451a53189/)
 
