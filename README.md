@@ -1,9 +1,7 @@
 # Project 2 InTouch
 Created for project 2 at Northwestern Bootcamp Intouch is a real-time, interactive app that helps parents keep "InTouch" of their children and they're location.  A google maps view of all the children's location is stored and visualized through a custom-made API using Google maps platform, Sequelize, and MySQL database. When a child leaves a set user defined zone inTouch sends a node mailer alert to the parent's email. The family can utilize the built-in real-time chat interface using the socket-io library allowing for full-duplex chat connection between family members. The app's user authentication is handled through OKTA a cloud-based access management system.
 
-[Demo Screencasify Link :](LINK) 
-[Heroku Link :](LINK)
-
+[Demo of Intouch](https://drive.google.com/open?id=1Y5yFGbi7o1O4_1aUpn7zzYNKoI-h6pof) 
 
 ## Screen Shots
 Register
@@ -42,10 +40,9 @@ Google Maps
 - Go to localhost3000:/oktadash 
 - Register new user
 
-## Project 3- Accolades By Classroom Vote Awarded
+## Project 2- Accolades By Classroom Vote Awarded
 
-Winner Most Awe Inspiring 60%  - First Place Prize
-
+Winner Most Awe Inspiring 60%  - [First Place Prize](https://drive.google.com/open?id=1itzgWj2roE8hZ2AIQbCqvCU2piayLXUitDJsF5Xws7s)
 Winner Most Useful 65%
 
 Winner Most Creative 45%
@@ -56,9 +53,9 @@ Winner Best UI/UX 65%
 
 ## Programming Team
 
-**Joey Lansangan** - /Materialize/HTML/CSS/Frontend Visual Design - [Joey](https://joeylansangan.github.io/streetcode/)
+**Joey Lansangan** - /Materialize/HTML/CSS/Frontend Visual Design - [Joey Portfolio](https://joeylansangan.github.io/streetcode/)
 
-**Sung Lee** - /OKTA Authentication/SocketIO/NPM Packages - [Sung](https://sungsoolee2.github.io/developer-portfolio/)
+**Sung Lee** - /OKTA Authentication/SocketIO/NPM Packages - [Sung Portfolio](https://sungsoolee2.github.io/developer-portfolio/)
 
-**Kat Poulos** - /Sequelize MySQL/Google API/Nodemailer/Backend JS - [Kat](LINK)
+**Kat Poulos** - /Sequelize MySQL/Google API/Nodemailer/Backend JS - [Kat Portfolio](https://www.linkedin.com/in/katerina-poulos-451a53189/)
 
