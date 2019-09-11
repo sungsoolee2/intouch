@@ -9,7 +9,7 @@ Register
 
 Sign In
 ![Screen shot2](./public/assets/images/readme/read5.png)
-git a
+
 Dashboard
 ![Screen shot3](./public/assets/images/readme/read4.png)
 
